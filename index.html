@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抗老研究室｜探索健康恢復力</title>
+<meta name="description" content="抗老研究室是一個整合科技、數據、AI 與跨領域健康專業的恢復力平台。讓生命不只是變老，而是持續綻放。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4F4F8;
+  --cream-2:#ECEDF3;
+  --sand:#E2E3EC;
+  --sage:#A1A2B6;
+  --sage-deep:#34354A;
+  --forest:#24263A;
+  --clay:#8E84BE;
+  --clay-soft:#B9B0DC;
+  --gold:#C7B8D8;
+  --ink:#2B2D40;
+  --muted:#83859C;
+  --line:#E5E6EE;
+  --white:#FFFFFF;
+  --radius:22px;
+  --shadow:0 26px 64px -34px rgba(40,42,78,.40);
+  --shadow-soft:0 14px 36px -22px rgba(40,42,78,.30);
+  --max:1180px;
+  --irid:linear-gradient(115deg,#C9B8E8,#A8D5E5,#F3CBD3,#D7E8D5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.85;
+  font-weight:400;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Noto Serif TC',serif;font-weight:500;line-height:1.4;color:var(--forest);letter-spacing:.04em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.serif{font-family:'Noto Serif TC',serif}
+
+/* ---------- placeholder graphic ---------- */
+.ph{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  background:linear-gradient(135deg,var(--sand),var(--cream-2));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sage-deep);min-height:220px;
+}
+.ph svg{width:100%;height:100%;position:absolute;inset:0}
+.ph span{position:relative;z-index:2;font-size:.82rem;letter-spacing:.16em;
+  background:rgba(255,255,255,.62);padding:6px 16px;border-radius:999px;backdrop-filter:blur(2px)}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,248,242,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:22px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer;flex-shrink:0}
+.logo .mark{width:42px;height:42px;border-radius:50%;object-fit:cover;
+  box-shadow:var(--shadow-soft);display:block}
+.logo b{font-family:'Noto Serif TC';font-size:1.12rem;color:var(--forest);font-weight:600;letter-spacing:.02em}
+.logo small{display:block;font-size:.6rem;letter-spacing:.28em;color:var(--sage);font-weight:500}
+.menu{display:flex;gap:3px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.menu a{
+  font-size:.82rem;padding:8px 11px;border-radius:999px;color:var(--muted);
+  font-weight:500;transition:.2s;white-space:nowrap;cursor:pointer
+}
+.menu a:hover{color:var(--forest);background:var(--cream-2)}
+.menu a.active{color:#fff;background:var(--sage-deep)}
+.nav-cta{background:var(--forest)!important;color:#fff!important}
+.nav-cta:hover{background:#16172a!important}
+.burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;
+  width:44px;height:44px;border-radius:12px}
+.burger span{display:block;width:22px;height:2px;background:var(--forest);margin:5px auto;border-radius:2px;transition:.25s}
+
+/* ---------- page system ---------- */
+.page{display:none;animation:fade .5s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ---------- generic sections ---------- */
+section.block{padding:74px 0}
+.eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.3em;font-weight:600;margin-bottom:16px;text-transform:uppercase;background:var(--irid);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.06rem;color:var(--muted);max-width:640px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+h2.title{font-size:2rem;margin-bottom:8px}
+.page-head{padding:70px 0 14px}
+.page-head .crumb{font-size:.74rem;letter-spacing:.22em;color:var(--sage);font-weight:600;margin-bottom:14px}
+.page-head h1{font-size:2.5rem;margin-bottom:18px}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(1100px 520px at 78% -8%,rgba(201,139,107,.16),transparent),
+    radial-gradient(900px 520px at 8% 110%,rgba(138,154,126,.20),transparent),
+    var(--cream);
+  padding:84px 0 70px;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero h1{font-size:3.05rem;line-height:1.28;margin-bottom:22px}
+.hero h1 .hl{background:var(--irid);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-size:1.12rem;color:var(--muted);margin-bottom:30px;max-width:520px}
+.hero-art{height:420px}
+.hero-art .ph{height:100%}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.badge{font-size:.78rem;color:var(--sage-deep);background:var(--white);
+  border:1px solid var(--line);padding:7px 15px;border-radius:999px;box-shadow:var(--shadow-soft)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
+  font-family:'Noto Sans TC';font-size:.95rem;font-weight:500;
+  padding:14px 28px;border-radius:999px;transition:.22s;letter-spacing:.02em}
+.btn-primary{background:var(--forest);color:#fff;box-shadow:0 16px 34px -16px rgba(36,38,58,.55)}
+.btn-primary:hover{background:#16172a;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--sage)}
+.btn-ghost:hover{background:var(--sage);color:#fff}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;box-shadow:var(--shadow-soft);transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:var(--cream-2);margin-bottom:16px;color:var(--sage-deep)}
+.card h3{font-size:1.18rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.94rem}
+.tint{background:var(--cream-2);border:none}
+.soft-band{background:var(--cream-2)}
+
+/* ---------- steps / flow ---------- */
+.flow{display:grid;gap:0}
+.flow-step{display:grid;grid-template-columns:88px 1fr;gap:24px;position:relative;padding-bottom:34px}
+.flow-step:not(:last-child)::before{content:"";position:absolute;left:43px;top:64px;bottom:0;width:2px;
+  background:linear-gradient(var(--sage),transparent)}
+.flow-num{width:64px;height:64px;border-radius:50%;background:var(--white);border:2px solid var(--sage);
+  display:flex;align-items:center;justify-content:center;font-family:'Noto Serif TC';font-size:1.3rem;
+  color:var(--sage-deep);box-shadow:var(--shadow-soft);font-weight:600}
+.flow-body{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-soft);overflow:hidden;display:grid;grid-template-columns:1fr 260px;min-height:132px}
+.flow-body .ftext{padding:16px 24px;align-self:center}
+.flow-body .fimg{position:relative;overflow:hidden;min-height:0;border-radius:0}
+.flow-body .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.flow-body h3{font-size:1.22rem;margin-bottom:6px}
+.flow-body p{color:var(--muted)}
+@media(max-width:760px){.flow-body{grid-template-columns:1fr}.flow-body .fimg{height:150px}}
+
+/* horizontal flow chips */
+.hflow{display:flex;align-items:stretch;gap:14px;flex-wrap:wrap;justify-content:center}
+.hflow .node{flex:1 1 180px;min-width:160px;background:var(--white);border:1px solid var(--line);
+  border-radius:18px;padding:24px 20px;text-align:center;box-shadow:var(--shadow-soft);position:relative}
+.hflow .node .k{font-size:.72rem;letter-spacing:.2em;color:var(--clay);font-weight:600}
+.hflow .node h4{font-size:1.12rem;margin:8px 0 6px}
+.hflow .node p{font-size:.86rem;color:var(--muted)}
+.hflow .arrow{display:flex;align-items:center;color:var(--sage);font-size:1.5rem}
+
+/* ---------- five recovery ---------- */
+.five{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.five .item{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 18px;text-align:center;overflow:hidden;
+  box-shadow:var(--shadow-soft);transition:.25s}
+.five .item:hover{transform:translateY(-5px)}
+.five .orb{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
+.five .item h4{font-size:1.1rem;margin-bottom:4px}
+.five .item p{font-size:.82rem;color:var(--muted)}
+.five .orb.pic{width:92px;height:92px;min-height:0;overflow:hidden}
+.five .item .ph img{object-position:center top}
+
+/* ---------- solution categories ---------- */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sol{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  box-shadow:var(--shadow-soft);transition:.25s}
+.sol:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.sol .no{font-family:'Noto Serif TC';font-size:.9rem;color:var(--clay);font-weight:600}
+.sol h3{font-size:1.22rem;margin:6px 0 12px}
+.sol .tags{display:flex;flex-wrap:wrap;gap:7px}
+.sol .tags span{font-size:.78rem;color:var(--sage-deep);background:var(--cream-2);
+  padding:5px 11px;border-radius:999px}
+
+/* ---------- quote / manifesto ---------- */
+.manifesto{background:
+   radial-gradient(800px 400px at 80% 0,rgba(201,139,107,.18),transparent),
+   var(--forest);color:#F4EEE3;border-radius:32px;padding:64px 56px;text-align:center}
+.manifesto h2{color:#fff;font-size:2.1rem;line-height:1.6}
+.manifesto{position:relative;overflow:hidden}
+.manifesto-bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.manifesto::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(28,30,50,.72),rgba(24,26,44,.82))}
+.manifesto-inner{position:relative;z-index:2}
+.manifesto p{color:rgba(244,238,227,.82);max-width:680px;margin:20px auto 0}
+.pull{font-family:'Noto Serif TC';font-size:1.7rem;line-height:1.7;color:var(--forest);max-width:760px}
+.pull .hl{color:var(--clay)}
+
+/* values list */
+.values{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.value{text-align:center;padding:22px 12px;border-radius:18px;background:var(--white);border:1px solid var(--line)}
+.value .vic{width:58px;height:58px;object-fit:contain;display:block;margin:0 auto 12px}
+.value b{display:block;font-family:'Noto Serif TC';font-size:1.2rem;color:var(--sage-deep);margin-bottom:6px}
+.value small{color:var(--muted);font-size:.82rem;line-height:1.7}
+
+/* journal / story cards */
+.post{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-soft);transition:.25s;cursor:pointer}
+.post:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.post .ph{border-radius:0;min-height:0;aspect-ratio:16/10}
+.post .body{padding:22px}
+.post .cat{font-size:.72rem;letter-spacing:.18em;color:var(--clay);font-weight:600}
+.post h3{font-size:1.12rem;margin:8px 0}
+.post p{font-size:.9rem;color:var(--muted)}
+
+/* chips filter */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
+.chips span{font-size:.84rem;padding:8px 16px;border-radius:999px;background:var(--white);
+  border:1px solid var(--line);color:var(--sage-deep);cursor:pointer;transition:.2s}
+.chips span:hover{border-color:var(--clay);color:var(--forest)}
+.chips span.on{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
+
+/* CTA big */
+.cta-band{background:linear-gradient(135deg,var(--sage),var(--sage-deep));color:#fff;
+  border-radius:32px;padding:60px 50px;text-align:center;box-shadow:var(--shadow)}
+.cta-band h2{color:#fff;font-size:2rem;margin-bottom:12px}
+.cta-band p{color:rgba(255,255,255,.88);max-width:560px;margin:0 auto 26px}
+.cta-band .btn-primary{background:#fff;color:var(--forest)}
+.cta-band .btn-primary:hover{background:var(--cream)}
+.cta-flora{position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center}
+.cta-flora-inner{position:relative;z-index:2;width:100%}
+.cta-flora .bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.cta-flora .bg img{object-position:center top}
+.cta-flora .bg.subj img{object-position:center 26%}
+.cta-flora .bg.subj2 img{transform:scale(1.32) translate(14%,-7%);transform-origin:center}
+.cta-flora .glass{position:relative;z-index:2;width:100%;max-width:1120px;margin:0 auto;background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.55);border-radius:30px;padding:62px 70px;min-height:300px;box-shadow:0 32px 72px -42px rgba(60,50,90,.5),inset 0 1px 0 rgba(255,255,255,.4)}
+.cta-flora .glass h2{color:var(--forest);font-size:1.9rem;margin-bottom:14px;max-width:560px}
+.cta-flora .glass p{color:var(--ink);margin-bottom:26px;font-size:.98rem;max-width:500px}
+@media(max-width:760px){.cta-flora{min-height:380px}.cta-flora .glass{max-width:none;padding:34px 26px;border-radius:22px}.cta-flora .glass h2,.cta-flora .glass p{max-width:none}}
+.cta-hero{position:relative;overflow:hidden;border-radius:32px;min-height:430px;display:flex;align-items:center;box-shadow:var(--shadow)}
+.cta-bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.cta-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(247,246,250,.88) 0%,rgba(247,246,250,.55) 42%,rgba(247,246,250,.05) 72%)}
+.cta-inner{position:relative;z-index:2;padding:0 56px;max-width:600px}
+.cta-inner h2{font-size:2.2rem;color:var(--forest);margin-bottom:12px}
+.cta-inner p{color:var(--ink);margin-bottom:26px;max-width:430px}
+@media(max-width:700px){.cta-hero{min-height:380px}.cta-veil{background:linear-gradient(0deg,rgba(247,246,250,.92),rgba(247,246,250,.45))}.cta-inner{padding:0 28px}}
+
+/* CTA option cards */
+.cta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.start-stage{position:relative;overflow:hidden;padding:60px 0 84px}
+.start-bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.start-bg img{object-position:center top}
+.page-hero{position:relative;overflow:hidden;min-height:620px;display:flex;align-items:center;padding:70px 0;margin-bottom:6px}
+.page-hero .pbg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.page-hero .pbg img{object-position:center top}
+.page-hero .pbg.up img{object-position:center 35%}
+.page-hero .pbg.up-eco img{object-position:center 60%}
+.page-hero .pbg.up-consult img{object-position:center 58%}
+.page-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(247,246,250,.5) 0%,rgba(247,246,250,.12) 38%,rgba(247,246,250,0) 62%)}
+.page-hero.hero-dark::after{background:linear-gradient(90deg,rgba(34,30,52,.34) 0%,rgba(34,30,52,.20) 40%,rgba(34,30,52,.04) 66%,rgba(34,30,52,0) 100%)}
+.page-hero.hero-dark .crumb{color:rgba(255,255,255,.82)}
+.page-hero.hero-dark h1{color:#fff}
+.page-hero.hero-dark .lead{color:rgba(255,255,255,.92)}
+.page-hero .inner{position:relative;z-index:2;width:100%}
+@media(max-width:700px){.page-hero{min-height:440px;padding:48px 0}}
+.float-card{position:relative;z-index:6;margin-top:-80px;margin-bottom:8px}
+.float-card .panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:46px 52px;text-align:center;max-width:900px;margin:0 auto}
+.float-card .panel .lead{margin-left:auto;margin-right:auto}
+.pchk{display:flex;align-items:flex-start;gap:11px;font-size:1rem;color:var(--ink);line-height:1.7}
+.pchk i{flex-shrink:0;font-style:normal;font-weight:700;background:var(--irid);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:700px){.float-card{margin-top:-44px}.float-card .panel{padding:32px 24px}}
+.decode-banner .ph{height:540px;min-height:0;border-radius:0}
+.decode-banner .ph img{object-position:center top}
+@media(max-width:700px){.decode-banner .ph{height:280px}}
+.start-stage::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(247,246,250,.82) 0%,rgba(247,246,250,.44) 40%,rgba(247,246,250,.16) 100%)}
+.start-stage-inner{position:relative;z-index:2;width:100%}
+@media(max-width:700px){.start-stage{padding:40px 0 56px}}
+.cta-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  box-shadow:var(--shadow-soft);transition:.25s}
+.cta-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cta-card .ic{width:48px;height:48px;border-radius:14px;background:var(--cream-2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--clay)}
+.cta-card h3{font-size:1.15rem;margin-bottom:6px}
+.cta-card p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+
+/* belief stack */
+.belief{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.belief .b{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--clay);
+  border-radius:14px;padding:22px 26px;display:flex;gap:18px;align-items:center}
+.belief .bic{width:56px;height:56px;object-fit:contain;flex-shrink:0}
+.belief .b h4{font-size:1.1rem;color:var(--forest);margin-bottom:6px}
+.belief .b p{color:var(--muted);font-size:.94rem}
+
+/* stat */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.stat b{display:block;font-family:'Noto Serif TC';font-size:2.3rem;color:var(--sage-deep)}
+.stat small{color:var(--muted)}
+
+/* footer */
+footer{background:var(--forest);color:#E9E2D5;padding:60px 0 28px;margin-top:0}
+footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+footer h5{font-family:'Noto Serif TC';color:#fff;font-size:1rem;margin-bottom:16px;font-weight:600}
+footer a,footer li{color:rgba(233,226,213,.78);font-size:.9rem;line-height:2.1;cursor:pointer;list-style:none}
+footer a:hover{color:#fff}
+footer .tag{font-family:'Noto Serif TC';font-size:1.2rem;color:#fff;margin-bottom:10px}
+footer .tag small{display:block;font-family:'Noto Sans TC';font-size:.86rem;color:rgba(233,226,213,.7);margin-top:8px;line-height:1.9}
+.social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.social span{font-size:.78rem;border:1px solid rgba(255,255,255,.25);padding:6px 13px;border-radius:999px;color:rgba(233,226,213,.85)}
+.v2{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.v2 .lab{font-size:.72rem;letter-spacing:.2em;color:var(--gold);font-weight:600;margin-bottom:12px}
+.v2 .items{display:flex;flex-wrap:wrap;gap:9px}
+.v2 .items span{font-size:.8rem;color:rgba(233,226,213,.7);border:1px dashed rgba(255,255,255,.22);padding:6px 13px;border-radius:999px}
+.copy{text-align:center;color:rgba(233,226,213,.5);font-size:.8rem;margin-top:30px}
+
+.mb0{margin-bottom:0}
+.mt40{margin-top:40px}.mt28{margin-top:28px}.mt20{margin-top:20px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+
+/* ---------- ecosystem ---------- */
+.itag{font-size:.78rem;color:var(--sage-deep);background:var(--cream-2);padding:5px 11px;border-radius:999px;display:inline-block}
+.dim .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.dim .no{font-family:'Noto Serif TC';font-size:1rem;color:var(--clay);font-weight:700}
+.dim .orb-s{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.dim .pp{font-size:.9rem;color:var(--sage-deep);margin:0 0 14px;font-weight:500}
+.dim .tags{display:flex;flex-wrap:wrap;gap:7px}
+.why{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;text-align:center}
+.why .wic{width:56px;height:56px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.35rem}
+.why b{display:block;font-family:'Noto Serif TC';color:var(--forest);margin-bottom:4px;font-size:1.04rem}
+.why small{color:var(--muted);font-size:.84rem;line-height:1.7}
+.partner h4{display:flex;align-items:center;gap:11px;font-size:1.16rem;margin-bottom:10px}
+.partner h4 .pic{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.partner .pr{display:grid;grid-template-columns:1fr 1.25fr;gap:14px;padding:11px 0;border-top:1px solid var(--line)}
+.partner .pr b{font-weight:500;color:var(--forest);font-size:.92rem}
+.partner .pr span{color:var(--muted);font-size:.88rem}
+.zig{display:grid;grid-template-columns:0.95fr 1.05fr;gap:46px;align-items:center;padding:18px 0}
+.zigwrap .zig:nth-child(even) .media{order:2}
+.zig .media{min-height:300px}
+.zig .no{font-family:'Noto Serif TC';font-size:1.05rem;color:var(--clay);font-weight:700;display:inline-block;margin-bottom:4px}
+.zig .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+@media(max-width:760px){.zig{grid-template-columns:1fr;gap:20px;padding:12px 0}.zigwrap .zig:nth-child(even) .media{order:0}}
+.video{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#1c1c1a;cursor:pointer;box-shadow:var(--shadow)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.video .play .pbtn{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--forest);padding-left:6px;box-shadow:var(--shadow)}
+@media(max-width:980px){.why{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.why{grid-template-columns:1fr 1fr}.partner .pr{grid-template-columns:1fr;gap:2px}}
+
+.hero{position:relative;overflow:hidden;min-height:640px;display:flex;align-items:center;background:radial-gradient(1200px 620px at 82% -12%,rgba(201,184,232,.28),transparent),radial-gradient(950px 600px at -5% 115%,rgba(168,213,229,.24),transparent),var(--cream);padding:110px 0 132px}
+.hero-bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(244,244,248,.95) 0%,rgba(244,244,248,.72) 34%,rgba(244,244,248,.2) 60%,rgba(244,244,248,0) 80%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-copy{max-width:560px}
+.hero h1{font-size:3.35rem;line-height:1.34;letter-spacing:.07em;font-weight:500}
+.irid-line{height:3px;width:300px;max-width:72%;border-radius:3px;background:var(--irid);margin:28px 0 22px}
+.irid-text{background:var(--irid);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ph.mtop img{object-position:center top}
+/* video hub */
+.vhub-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.vhub-more{color:var(--clay);font-size:.9rem;white-space:nowrap;font-weight:500}
+.vhub-more:hover{color:var(--forest)}
+.vlabel{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:var(--sage-deep);letter-spacing:.03em;margin-bottom:18px}
+.vlabel::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--irid)}
+.vtop{display:grid;grid-template-columns:1.02fr 1fr;gap:44px;margin-top:36px}
+@media(max-width:900px){.vtop{grid-template-columns:1fr;gap:40px}}
+/* featured */
+.vfeat{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+@media(max-width:560px){.vfeat{grid-template-columns:1fr}}
+.vfeat-thumb{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--sand),var(--cream-2));cursor:pointer}
+.vfeat-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.vfeat-info .cat{color:var(--clay);font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:8px}
+.vfeat-info h3{font-size:1.5rem;line-height:1.45;margin-bottom:10px}
+.vfeat-info .by{color:var(--sage-deep);font-size:.85rem;margin-bottom:12px}
+.vfeat-info p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:18px}
+/* latest 3 */
+.vlatest{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:560px){.vlatest{grid-template-columns:1fr}}
+/* play + duration */
+.vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.vplay span{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:1.05rem;padding-left:4px;box-shadow:0 10px 26px -12px rgba(20,16,36,.6)}
+.vdur{position:absolute;right:8px;bottom:8px;background:rgba(28,24,42,.8);color:#fff;font-size:.72rem;padding:2px 7px;border-radius:6px;letter-spacing:.03em}
+/* generic card */
+.vcard{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(60,50,90,.4)}
+.vthumb{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(135deg,var(--sand),var(--cream-2))}
+.vthumb img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.vcard.soon .vthumb img{object-position:center}
+.vsoon{position:absolute;left:0;right:0;bottom:0;text-align:center;padding:8px;background:linear-gradient(transparent,rgba(255,255,255,.85));color:var(--sage-deep);font-size:.82rem;letter-spacing:.08em}
+.vcard .vmeta{padding:12px 13px}
+.vmeta .cat{color:var(--clay);font-size:.72rem;font-weight:600;margin-bottom:5px}
+.vmeta h4{font-size:.92rem;line-height:1.5;color:var(--forest);margin-bottom:6px;font-weight:500}
+.vmeta small{color:var(--muted);font-size:.78rem}
+.vcard.soon{cursor:default}.vcard.soon:hover{transform:none;box-shadow:none}
+.vcard.soon .vthumb{display:flex;align-items:center;justify-content:center;color:var(--sage-deep);font-size:.86rem}
+/* browse by expert */
+.vbrowse{margin-top:58px}
+.vtabs{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 26px}
+.vtab{font-size:.82rem;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--muted);cursor:pointer;transition:.2s}
+.vtab:hover{color:var(--forest)}
+.vtab.on{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
+.vcarousel{position:relative}
+.vrail{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:none}
+.vrail::-webkit-scrollbar{display:none}
+.vrail>.vcard{flex:0 0 200px;scroll-snap-align:start}
+.vrail>.vcard .vthumb{aspect-ratio:3/4}
+/* article page */
+.post{cursor:pointer}
+.art-cover{position:relative;height:360px;overflow:hidden;background:linear-gradient(135deg,var(--sand),var(--cream-2))}
+.art-cover img{width:100%;height:100%;object-fit:cover;object-position:center top}
+@media(max-width:700px){.art-cover{height:220px}}
+.art-wrap{max-width:760px;margin:0 auto;padding:40px 22px 64px}
+.art-back{display:inline-block;color:var(--clay);font-size:.9rem;margin-bottom:22px;cursor:pointer}
+.art-back:hover{color:var(--forest)}
+.art-cat{color:var(--clay);font-size:.82rem;font-weight:600;letter-spacing:.08em;margin-bottom:10px}
+.art-title{font-size:2rem;line-height:1.45;margin-bottom:14px}
+@media(max-width:700px){.art-title{font-size:1.5rem}}
+.art-meta{color:var(--muted);font-size:.86rem;margin-bottom:32px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.art-body .art-lead{font-size:1.12rem;color:var(--sage-deep);line-height:1.95;margin-bottom:24px}
+.art-body h2{font-size:1.4rem;margin:42px 0 16px;color:var(--forest);padding-top:6px}
+.art-body h3{font-size:1.12rem;margin:30px 0 8px;color:var(--sage-deep)}
+.art-body .hook{color:var(--clay);font-weight:500;margin-bottom:8px}
+.art-body p{line-height:1.95;color:var(--ink);margin-bottom:16px;font-size:1rem}
+.art-body ul{margin:6px 0 20px;padding-left:20px}
+.art-body li{line-height:1.9;color:var(--ink);margin-bottom:6px}
+.art-body .art-img{margin:26px 0;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,var(--sand),var(--cream-2));aspect-ratio:16/10}
+.art-body .art-img img{width:100%;height:100%;object-fit:cover;display:block}
+.art-note{background:var(--cream-2);border-radius:12px;padding:16px 20px;margin:26px 0;font-size:.94rem;color:var(--sage-deep);line-height:1.85}
+.art-cta{max-width:760px;margin:0 auto 60px;padding:0 22px}
+.art-cta-inner{text-align:center;padding:36px 28px;background:linear-gradient(135deg,var(--cream-2),var(--sand));border-radius:18px}
+.art-cta-inner h3{font-size:1.25rem;color:var(--forest);margin-bottom:8px}
+.art-cta-inner p{color:var(--muted);font-size:.94rem;margin-bottom:20px}
+/* 顧問老師 */
+.post .hl{margin-top:10px;font-size:.8rem;color:var(--clay);font-weight:500;line-height:1.7}
+.post .more{margin-top:10px;font-size:.8rem;color:var(--sage-deep);font-weight:600}
+.mem-modal{position:fixed;inset:0;z-index:200;background:rgba(28,24,42,.66);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.mem-modal.on{display:flex}
+.mem-box{background:var(--white);border-radius:20px;max-width:720px;width:100%;padding:34px;position:relative;box-shadow:0 40px 90px -40px rgba(20,16,36,.6)}
+.mem-box .x{position:absolute;top:14px;right:16px;width:38px;height:38px;border:none;border-radius:50%;background:var(--cream-2);color:var(--forest);font-size:1.2rem;cursor:pointer;z-index:3}
+.mem-head{display:flex;gap:20px;align-items:center;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.mem-photo{width:92px;height:92px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--sand),var(--cream-2))}
+.mem-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.mem-head .cat{color:var(--clay);font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:4px}
+.mem-head h3{font-size:1.5rem;color:var(--forest)}
+.mem-body h4{font-size:.9rem;color:var(--sage-deep);margin:18px 0 8px;font-weight:600;letter-spacing:.02em}
+.mem-body ul{margin:0;padding-left:20px}
+.mem-body li{line-height:1.85;color:var(--ink);font-size:.92rem;margin-bottom:5px}
+@media(max-width:560px){.mem-box{padding:24px}.mem-head{flex-direction:column;text-align:center}}
+/* 健康量測足跡 */
+.foot-regions{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 40px;margin-top:40px}
+@media(max-width:700px){.foot-regions{grid-template-columns:1fr}}
+.foot-region h4{font-size:1.02rem;color:var(--forest);margin-bottom:14px;padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.foot-region h4 em{color:var(--clay);font-size:.8rem;font-weight:500;font-style:normal;letter-spacing:.02em}
+.foot-tags{display:flex;flex-wrap:wrap;gap:8px}
+.foot-tags span{font-size:.82rem;padding:6px 13px;border-radius:999px;background:var(--white);border:1px solid var(--line);color:var(--sage-deep)}
+.vid-modal{position:fixed;inset:0;z-index:200;background:rgba(28,24,42,.66);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.vid-modal.on{display:flex}
+.vid-box{background:var(--white);border-radius:20px;max-width:820px;width:100%;padding:30px;position:relative;display:flex;gap:28px;box-shadow:0 40px 90px -40px rgba(20,16,36,.6)}
+.vid-box .x{position:absolute;top:14px;right:16px;width:38px;height:38px;border:none;border-radius:50%;background:var(--cream-2);color:var(--forest);font-size:1.2rem;cursor:pointer;z-index:3}
+.vid-player{width:300px;flex-shrink:0;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000}
+.vid-player iframe{width:100%;height:100%;border:0}
+.vid-info{flex:1;align-self:center}
+.vid-info .cat{color:var(--clay);font-size:.82rem;font-weight:500;letter-spacing:.04em;margin-bottom:6px}
+.vid-info h3{font-size:1.3rem;color:var(--forest);line-height:1.5;margin-bottom:8px}
+.vid-info .by{display:block;color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.vid-info p{color:var(--ink);line-height:1.85;font-size:.95rem;margin-bottom:22px}
+@media(max-width:760px){.vid-box{flex-direction:column;padding:22px}.vid-player{width:100%;max-width:280px;margin:0 auto}}
+.end-band{position:relative;overflow:hidden;min-height:440px;display:flex;align-items:center;margin-top:6px}
+.end-band .bg{position:absolute;inset:0;z-index:0;min-height:0;border-radius:0}
+.end-band .bg img{object-position:center}
+.end-band::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(247,246,250,.5) 0%,rgba(247,246,250,.74) 70%,rgba(247,246,250,.82) 100%)}
+.end-band .end-inner{position:relative;z-index:2;width:100%}
+.media-thumb{aspect-ratio:792/555;min-height:0;border-radius:0}
+.mcarousel{position:relative;margin-top:40px}
+.mrail{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:none}
+.mrail::-webkit-scrollbar{display:none}
+.mrail>.post{flex:0 0 300px;scroll-snap-align:start}
+.cbtn{position:absolute;top:38%;transform:translateY(-50%);z-index:6;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(4px);cursor:pointer;font-size:1.6rem;line-height:1;color:var(--forest);box-shadow:0 10px 26px -14px rgba(60,50,90,.5)}
+.cbtn:hover{background:#fff}
+.cbtn.prev{left:-12px}.cbtn.next{right:-12px}
+@media(max-width:760px){.mrail>.post{flex:0 0 80%}.cbtn{display:none}}
+.evt{cursor:pointer;transition:transform .2s,box-shadow .2s}
+.evt:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(60,50,90,.4)}
+.evt .date{font-size:.8rem;letter-spacing:.06em;color:var(--clay);margin-bottom:4px}
+.evt-modal{position:fixed;inset:0;z-index:200;background:rgba(28,24,42,.62);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:48px 20px}
+.evt-modal.on{display:flex}
+.evt-box{background:var(--white);border-radius:20px;max-width:920px;width:100%;padding:36px 38px;position:relative;box-shadow:0 40px 90px -40px rgba(20,16,36,.6)}
+.evt-box .x{position:absolute;top:16px;right:18px;width:38px;height:38px;border:none;border-radius:50%;background:var(--cream-2);color:var(--forest);font-size:1.2rem;cursor:pointer}
+.evt-box .date{font-size:.82rem;letter-spacing:.06em;color:var(--clay);margin-bottom:6px}
+.evt-box h3{font-size:1.5rem;color:var(--forest);margin-bottom:12px}
+.evt-box .intro{color:var(--ink);line-height:1.85;margin-bottom:24px;font-size:.96rem}
+.evt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.evt-photo{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--sand),var(--cream-2));display:flex;align-items:center;justify-content:center}
+.evt-photo img{width:100%;height:100%;object-fit:cover}
+.evt-photo span{font-size:.74rem;letter-spacing:.1em;color:var(--sage-deep);background:rgba(255,255,255,.62);padding:5px 12px;border-radius:999px}
+@media(max-width:700px){.evt-grid{grid-template-columns:repeat(2,1fr)}.evt-box{padding:28px 22px}}
+.site{padding:12px 0;border-top:1px solid var(--line)}
+.site b{display:block;font-weight:500;color:var(--forest);font-size:.95rem;margin-bottom:3px}
+.site span{color:var(--muted);font-size:.88rem}
+.hero-zh{font-size:1.15rem;letter-spacing:.3em;color:var(--ink);margin-bottom:8px}
+.hero-en{font-size:.82rem;letter-spacing:.36em;color:var(--muted);margin-bottom:34px}
+.watch{position:absolute;right:26px;top:40%;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer;color:var(--muted)}
+.watch .pp{width:50px;height:50px;border-radius:50%;border:1px solid var(--sage);display:flex;align-items:center;justify-content:center;color:var(--forest);padding-left:3px}
+.watch .vt{writing-mode:vertical-rl;letter-spacing:.32em;font-size:.7rem}
+.featbar{position:relative;margin-top:-76px;z-index:6;margin-bottom:24px}
+.featbar .inner{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr)}
+.featbar .f{padding:30px 26px;border-right:1px solid var(--line);cursor:pointer;transition:.2s}
+.featbar .f:last-child{border-right:none}
+.featbar .f:hover{background:var(--cream-2)}
+.featbar .f .ico{font-size:1.6rem;margin-bottom:12px;display:inline-block}
+.featbar .f h4{font-size:1.06rem;margin-bottom:6px;letter-spacing:.03em;font-weight:500}
+.featbar .f p{font-size:.86rem;color:var(--muted);margin-bottom:12px;line-height:1.7}
+.featbar .f .more{font-size:.7rem;letter-spacing:.18em;font-weight:600;background:var(--irid);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:880px){.hero{padding:64px 0 84px;min-height:480px}.hero h1{font-size:2.4rem}.hero-copy{max-width:none}.hero-veil{background:linear-gradient(0deg,rgba(244,244,248,.92),rgba(244,244,248,.5))}.watch{display:none}.featbar{margin-top:24px}.featbar .inner{grid-template-columns:1fr 1fr}.featbar .f{border-right:none;border-bottom:1px solid var(--line)}}
+@media(max-width:560px){.featbar .inner{grid-template-columns:1fr}}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .menu{display:none;position:absolute;top:72px;left:0;right:0;background:var(--cream);
+    flex-direction:column;padding:14px 20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .menu.open{display:flex}
+  .menu a{padding:12px 14px;font-size:.95rem}
+  .burger{display:block}
+  .hero-grid,.split{grid-template-columns:1fr}
+  .hero-art{height:300px}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .five{grid-template-columns:repeat(2,1fr)}
+  .values{grid-template-columns:repeat(2,1fr)}
+  .sol-grid,.cta-cards{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  footer .fgrid{grid-template-columns:1fr 1fr}
+  .hflow .arrow{transform:rotate(90deg)}
+}
+@media(max-width:620px){
+  .hero h1{font-size:2.3rem}
+  .page-head h1{font-size:2rem}
+  h2.title{font-size:1.6rem}
+  .g2,.g3,.g4,.five,.values,.sol-grid,.cta-cards,.belief,.stats{grid-template-columns:1fr}
+  .manifesto,.cta-band{padding:42px 26px}
+  .flow-step{grid-template-columns:1fr}
+  .flow-step:not(:last-child)::before{display:none}
+  footer .fgrid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <div class="logo" onclick="go('home')">
+      <img class="mark" src="images/logo.png" alt="NuLife Sharing">
+      <span><b>抗老研究室</b><small>ANTI-AGING LAB</small></span>
+    </div>
+    <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu">
+      <a onclick="go('home')" data-p="home">首頁</a>
+      <a onclick="go('about')" data-p="about">品牌理念</a>
+      <a onclick="go('recovery')" data-p="recovery">恢復力</a>
+      <a onclick="go('platform')" data-p="platform">AI 健康解碼</a>
+      <a onclick="go('ecosystem')" data-p="ecosystem">恢復力生態系</a>
+      <a onclick="go('consultant')" data-p="consultant">合作顧問</a>
+      <a onclick="go('journal')" data-p="journal">知識站</a>
+      <a onclick="go('stories')" data-p="stories">恢復故事</a>
+      <a onclick="go('community')" data-p="community">Community</a>
+      <a class="nav-cta" onclick="go('start')" data-p="start">開始健康旅程</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==================================================== HOME -->
+<div class="page" id="page-home" data-page="home">
+  <section class="hero">
+    <div class="hero-bg ph" data-ph="Hero 背景主視覺" data-img="hero-bg.jpg"></div>
+    <div class="hero-veil"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>讓生命不只是變老，<br>而是<span class="hl">持續綻放</span>。</h1>
+        <div class="irid-line"></div>
+        <p class="hero-zh">科學　×　光譜　×　恢復力設計</p>
+        <p class="hero-en">RECOVERY IS THE NEW ANTI-AGING</p>
+        <div class="btn-row"><button class="btn btn-primary" onclick="go('platform')">開始探索恢復力 →</button></div>
+      </div>
+    </div>
+    <div class="watch" onclick="go('platform')"><span class="pp">▶</span><span class="vt">WATCH OUR STORY</span></div>
+  </section>
+
+  <!-- 浮層特色卡片條 -->
+  <section class="featbar"><div class="wrap"><div class="inner">
+    <div class="f" onclick="go('platform')"><span class="ico"><img src="images/feat-explore.png" alt="" onerror="this.outerHTML='🧭'" style="width:57px;height:57px;object-fit:contain;display:block"></span><h4>健康探索</h4><p>AI 分析生活數據，看見潛在風險。</p><span class="more">VIEW MORE →</span></div>
+    <div class="f" onclick="go('platform')"><span class="ico"><img src="images/feat-prysmio.png" alt="" onerror="this.outerHTML='🔬'" style="width:57px;height:57px;object-fit:contain;display:block"></span><h4>PrysmiO 光譜分析</h4><p>15 秒光譜檢測，解碼恢復力狀態。</p><span class="more">VIEW MORE →</span></div>
+    <div class="f" onclick="go('consultant')"><span class="ico"><img src="images/feat-coaching.png" alt="" onerror="this.outerHTML='🤝'" style="width:57px;height:57px;object-fit:contain;display:block"></span><h4>專業健康陪跑</h4><p>跨領域團隊，陪伴你實踐健康計畫。</p><span class="more">VIEW MORE →</span></div>
+    <div class="f" onclick="go('ecosystem')"><span class="ico"><img src="images/feat-ecosystem.png" alt="" onerror="this.outerHTML='🌿'" style="width:57px;height:57px;object-fit:contain;display:block"></span><h4>恢復力生態系</h4><p>整合多元專業，量身搭配方案。</p><span class="more">VIEW MORE →</span></div>
+  </div></div></section>
+
+  <!-- 品牌理念 -->
+  <section class="block">
+    <div class="wrap split">
+      <div class="ph" data-ph="品牌理念" data-img="home-about.jpg" style="min-height:340px"></div>
+      <div>
+        <span class="eyebrow">About Anti-Aging Lab</span>
+        <h2 class="title">我們不是與時間對抗，<br>而是與身體合作。</h2>
+        <p class="lead mt20">很多人不是生病之後才開始不健康，而是在真正生病之前，就已經長期處於亞健康狀態。真正缺少的，不是更多資訊，而是一個能整合資訊、理解身體、找到方向並陪伴落實的平台。</p>
+        <button class="btn btn-ghost mt28" onclick="go('about')">認識品牌理念</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 為什麼成立 -->
+  <section class="block soft-band">
+    <div class="wrap center">
+      <span class="eyebrow">Why We Exist</span>
+      <h2 class="title">為什麼成立抗老研究室</h2>
+      <p class="lead center">睡不好、容易疲勞、壓力過大、恢復變慢、免疫下降——這些都是身體持續發出的訊號。市面上資訊太多、方向太少，其實，健康沒有標準答案。問題，常出在三個地方：</p>
+      <div class="grid g3 mt40" style="text-align:left">
+        <div class="card tint" style="padding:0;overflow:hidden">
+          <div class="ph" data-ph="資訊太多，卻沒方向" data-img="why-1.jpg" style="min-height:190px;border-radius:0"></div>
+          <div style="padding:26px 28px 30px"><div class="ic">①</div><h3>資訊太多，卻沒方向</h3><p>市面上保健、飲食、運動、醫學建議都有價值，卻也讓人越看越混亂，不知道該聽誰的。</p></div>
+        </div>
+        <div class="card tint" style="padding:0;overflow:hidden">
+          <div class="ph" data-ph="方法很多，卻不一定適合你" data-img="why-2.jpg" style="min-height:190px;border-radius:0"></div>
+          <div style="padding:26px 28px 30px"><div class="ic">②</div><h3>方法很多，卻不一定適合你</h3><p>每個人的生活、壓力與身體狀態都不同，市面上的「標準答案」未必適合你。</p></div>
+        </div>
+        <div class="card tint" style="padding:0;overflow:hidden">
+          <div class="ph" data-ph="有建議，卻沒人陪你落實" data-img="why-3.jpg" style="min-height:190px;border-radius:0"></div>
+          <div style="padding:26px 28px 30px"><div class="ic">③</div><h3>有建議，卻沒人陪你落實</h3><p>市面上多半給完建議就結束；但健康不是一次性的改變，而需要長期的陪伴。</p></div>
+        </div>
+      </div>
+      <p class="lead center mt40">這正是抗老研究室想解決的事。</p>
+    </div>
+  </section>
+
+  <!-- 平台四步驟 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Our Approach</span><h2 class="title">平台四步驟</h2>
+      <p class="lead center">在疾病發生之前，看見健康、理解健康、建立健康。</p></div>
+      <div class="hflow mt40">
+        <div class="node"><div class="k">STEP 01</div><h4>看見健康</h4><p>透過 PrysmiO 等工具，讓恢復力被量化。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 02</div><h4>理解健康</h4><p>AI 健康解碼，找出影響恢復力的關鍵。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 03</div><h4>找到方向</h4><p>顧問整合資源，提供適合你的方案。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 04</div><h4>建立恢復力</h4><p>持續陪伴，讓恢復力成為生活方式。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五大恢復力 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Five Pillars</span><h2 class="title">五大恢復力</h2>
+      <p class="lead center">恢復力，比年齡更能說明你的身體狀態。</p></div>
+      <div class="five mt40">
+        <div class="item"><div class="ph" data-ph="睡眠" data-img="pillar-sleep.jpg" style="aspect-ratio:7/5;min-height:0;margin:-26px -18px 16px;border-radius:0"></div><h4>睡眠</h4><p>修復能力</p></div>
+        <div class="item"><div class="ph" data-ph="免疫" data-img="pillar-immune.jpg" style="aspect-ratio:7/5;min-height:0;margin:-26px -18px 16px;border-radius:0"></div><h4>免疫</h4><p>發炎與恢復</p></div>
+        <div class="item"><div class="ph" data-ph="肌膚" data-img="pillar-skin.jpg" style="aspect-ratio:7/5;min-height:0;margin:-26px -18px 16px;border-radius:0"></div><h4>肌膚</h4><p>彈性與老化</p></div>
+        <div class="item"><div class="ph" data-ph="體態" data-img="pillar-body.jpg" style="aspect-ratio:7/5;min-height:0;margin:-26px -18px 16px;border-radius:0"></div><h4>體態</h4><p>代謝與體能</p></div>
+        <div class="item"><div class="ph" data-ph="情緒" data-img="pillar-emotion.jpg" style="aspect-ratio:7/5;min-height:0;margin:-26px -18px 16px;border-radius:0"></div><h4>情緒</h4><p>壓力與平衡</p></div>
+      </div>
+      <div class="center mt40"><button class="btn btn-ghost" onclick="go('recovery')">深入了解恢復力</button></div>
+    </div>
+  </section>
+
+  <!-- 恢復力生態系 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Recovery Ecosystem</span><h2 class="title">恢復力生態系</h2>
+      <p class="lead center">我們整合不同健康專業，從睡眠、營養、運動到情緒與免疫，共同協助你提升恢復力。</p></div>
+      <div class="grid g3 mt40">
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-sleep.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>睡眠恢復</h3><p>深層睡眠與身體修復</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-nutrition.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>營養支持</h3><p>從飲食打底恢復力</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-fitness.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>運動與體適能</h3><p>強化身體能量與活力</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-emotion.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>壓力與情緒管理</h3><p>平衡身心的恢復節奏</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-immune.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>免疫健康</h3><p>鞏固身體的防線</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/eco-consultant.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>專業健康顧問</h3><p>跨領域整合與陪伴</p></div>
+      </div>
+      <div class="center mt40"><button class="btn btn-primary" onclick="go('ecosystem')">認識恢復力生態系 →</button></div>
+    </div>
+  </section>
+
+  <!-- 社區成果 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Recovery Community</span><h2 class="title">社區推廣目標</h2></div>
+      <div class="stats mt40">
+        <div class="stat"><b>120+</b><small>合作里民中心</small></div>
+        <div class="stat"><b>48</b><small>企業健康合作</small></div>
+        <div class="stat"><b>300+</b><small>健康講座場次</small></div>
+        <div class="stat"><b>15,000+</b><small>恢復旅程參與者</small></div>
+      </div>
+      <div class="center mt40"><button class="btn btn-ghost" onclick="go('community')">看見全台目標</button></div>
+    </div>
+  </section>
+
+  <!-- 開始旅程 CTA -->
+  <section class="cta-flora">
+    <div class="ph bg subj" data-ph="開始旅程 背景主視覺" data-img="cta-bg.jpg"></div>
+    <div class="cta-flora-inner"><div class="wrap">
+      <div class="glass">
+        <h2>開始你的健康旅程</h2>
+        <p>從看見當下的恢復力狀態開始，讓恢復力成為一種生活方式。</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a>
+          <button class="btn btn-ghost" onclick="go('platform')">了解平台運作</button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+</div>
+
+<!-- ==================================================== 01 ABOUT -->
+<div class="page" id="page-about" data-page="about">
+  <section class="page-hero">
+    <div class="ph pbg up" data-ph="品牌理念 主視覺" data-img="about-hero.jpg"></div>
+    <div class="inner"><div class="wrap">
+      <div class="page-head" style="padding:0;max-width:560px">
+        <div class="crumb">01 ｜ ABOUT ANTI-AGING LAB</div>
+        <h1 style="font-size:2.9rem">品牌理念</h1>
+        <div class="irid-line" style="margin:22px 0 18px"></div>
+        <p class="lead">我們是誰？我們相信什麼？為什麼成立？</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="block" style="padding-top:30px">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2 class="title">品牌故事</h2>
+        <p class="lead mt20">我們發現，很多人不是生病之後才開始不健康，而是在真正生病之前，就已經長期處於亞健康狀態。睡不好、容易疲勞、壓力過大、恢復變慢、免疫下降……這些都是身體持續發出的訊號。</p>
+        <p class="lead mt20">現代人的健康資訊越來越多，每一種都有價值，卻也讓人更加困惑。真正缺少的，不是更多資訊，而是一個能整合資訊、理解身體、找到方向、並陪伴落實的平台。因此，抗老研究室誕生了。</p>
+      </div>
+      <div class="ph" data-ph="品牌故事" data-img="about-story.jpg" style="min-height:360px"></div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap grid g2">
+      <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/value-companion.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>品牌使命 Mission</h3><p>打造值得信賴的健康導航平台。透過科技、數據、AI 分析與跨領域專業陪伴，協助更多人在疾病發生之前，看見健康、理解健康、建立健康。</p></div>
+      <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/value-integrate.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>品牌願景 Vision</h3><p>讓恢復力，成為一種生活方式。串聯更多專業顧問與健康資源，共同打造亞洲最值得信賴的恢復力平台。</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap center">
+      <span class="eyebrow">Brand Philosophy</span>
+      <h2 class="title">品牌哲學</h2>
+      <p class="pull center" style="margin:24px auto 0">我們不是與時間對抗，<br>而是與<span class="hl">身體合作</span>。</p>
+      <div class="belief mt40" style="text-align:left">
+        <div class="b"><img class="bic" src="images/phil-brain.png" alt="" onerror="this.style.display='none'"><div><h4>健康不是控制，而是理解</h4><p>先理解身體，再談改善。</p></div></div>
+        <div class="b"><img class="bic" src="images/phil-data.png" alt="" onerror="this.style.display='none'"><div><h4>數據不是答案，而是探索的開始</h4><p>相信數據，但不迷信數據。</p></div></div>
+        <div class="b"><img class="bic" src="images/phil-ai.png" alt="" onerror="this.style.display='none'"><div><h4>AI 不是取代專業，而是協助理解</h4><p>讓科技放大人的專業判斷。</p></div></div>
+        <div class="b"><img class="bic" src="images/phil-heart.png" alt="" onerror="this.style.display='none'"><div><h4>恢復力，不只是能力，更是生活方式</h4><p>讓修復成為每天的日常。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap center">
+      <span class="eyebrow">Core Values</span>
+      <h2 class="title">品牌價值</h2>
+      <div class="values mt40">
+        <div class="value"><img class="vic" src="images/feat-prysmio.png" alt="" onerror="this.style.display='none'"><b>理解</b><small>先理解身體，再改善健康。</small></div>
+        <div class="value"><img class="vic" src="images/value-science.png" alt="" onerror="this.style.display='none'"><b>科學</b><small>相信數據，但不迷信數據。</small></div>
+        <div class="value"><img class="vic" src="images/value-integrate.png" alt="" onerror="this.style.display='none'"><b>整合</b><small>整合跨領域資源，而非單一答案。</small></div>
+        <div class="value"><img class="vic" src="images/value-companion.png" alt="" onerror="this.style.display='none'"><b>陪伴</b><small>長期建立新的生活方式。</small></div>
+        <div class="value"><img class="vic" src="images/value-hope.png" alt="" onerror="this.style.display='none'"><b>希望</b><small>每個人都擁有恢復的能力。</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap split">
+      <div class="ph" data-ph="品牌宣言 背景" data-img="manifesto-bg.jpg" style="min-height:380px;align-self:stretch"></div>
+      <div>
+        <span class="eyebrow">Manifesto</span>
+        <h2 class="title">真正重要的，不是活得更久，而是活得更健康、更有品質、更有力量。</h2>
+        <p class="lead mt20">健康，不是與時間競賽，而是理解自己的身體、尊重身體、陪伴身體。恢復力，不只是修復身體，也是重新找回生活的平衡。讓生命不只是變老，而是持續綻放。</p>
+        <button class="btn btn-primary mt28" onclick="go('platform')">開始你的恢復旅程 →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 02 RECOVERY -->
+<div class="page" id="page-recovery" data-page="recovery">
+  <section class="page-hero">
+    <div class="ph pbg" data-ph="恢復力 主視覺" data-img="recovery-hero.jpg"></div>
+    <div class="inner"><div class="wrap">
+      <div class="page-head" style="padding:0;max-width:560px">
+        <div class="crumb">02 ｜ RECOVERY</div>
+        <h1 style="font-size:2.9rem">恢復力</h1>
+        <div class="irid-line" style="margin:22px 0 18px"></div>
+        <p class="lead">什麼是恢復力？為什麼恢復力比年齡更重要？</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="block" style="padding-top:30px">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">What is Recovery</span>
+        <h2 class="title">恢復力，是身體持續修復的能力</h2>
+        <p class="lead mt20">真正的抗老，不是追求永遠年輕，而是讓身體擁有持續恢復的能力。當恢復力提升，生活就有更多能量、工作更有效率、家庭更有陪伴、人生也更有餘裕。</p>
+        <p class="lead mt20">年齡只是數字，恢復力才真正反映身體當下的狀態。這也是抗老研究室關注的核心。</p>
+      </div>
+      <div class="ph" data-ph="恢復力概念" data-img="recovery-concept.jpg" style="min-height:320px"></div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Five Pillars</span><h2 class="title">五大恢復力</h2>
+      <p class="lead center">這五大面向，正是 PrysmiO 檢測一次量測、為你逐項解讀的健康系統。</p></div>
+      <div class="five mt40">
+        <div class="item"><div class="orb" style="background:none;width:88px;height:88px"><img src="images/ricon-sleep.png" alt="" style="width:88px;height:88px;object-fit:contain"></div><h4>睡眠</h4><p>深層睡眠、睡眠品質與修復能力。</p></div>
+        <div class="item"><div class="orb" style="background:none;width:88px;height:88px"><img src="images/ricon-immune.png" alt="" style="width:88px;height:88px;object-fit:contain"></div><h4>免疫</h4><p>免疫防禦、發炎反應與恢復力。</p></div>
+        <div class="item"><div class="orb" style="background:none;width:88px;height:88px"><img src="images/ricon-skin.png" alt="" style="width:88px;height:88px;object-fit:contain"></div><h4>肌膚</h4><p>保濕度、彈性與肌膚老化指數。</p></div>
+        <div class="item"><div class="orb" style="background:none;width:88px;height:88px"><img src="images/ricon-body.png" alt="" style="width:88px;height:88px;object-fit:contain"></div><h4>體態</h4><p>代謝效率、脂肪管理與體能狀態。</p></div>
+        <div class="item"><div class="orb" style="background:none;width:88px;height:88px"><img src="images/ricon-emotion.png" alt="" style="width:88px;height:88px;object-fit:contain"></div><h4>情緒</h4><p>壓力指數、情緒平衡與自律神經。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap split">
+      <div class="ph" data-ph="恢復力生活方式" data-img="recovery-lifestyle.jpg" style="min-height:300px"></div>
+      <div>
+        <span class="eyebrow">Recovery Lifestyle</span>
+        <h2 class="title">恢復力生活方式</h2>
+        <p class="lead mt20">恢復力不是一次性的改變，而是融入每天的生活：規律的睡眠、合適的營養、適度的活動、放鬆的身心，以及一個支持身體的環境。</p>
+        <button class="btn btn-primary mt28" onclick="go('platform')">用 PrysmiO 看見你的恢復力 →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 03 PLATFORM -->
+<div class="page" id="page-platform" data-page="platform">
+  <section class="page-hero hero-dark">
+    <div class="ph pbg" data-ph="AI 健康解碼 主視覺" data-img="decode-hero.jpg"></div>
+    <div class="inner"><div class="wrap">
+      <div class="page-head" style="padding:0;max-width:560px">
+        <div class="crumb">03 ｜ AI HEALTH DECODE ｜ 核心頁</div>
+        <h1 style="font-size:2.9rem">AI 健康解碼</h1>
+        <div class="irid-line" style="margin:22px 0 18px"></div>
+        <p class="lead">我們如何幫助你？從 15 秒看見健康，到 AI 解碼出專屬你的恢復方向——分層、一氣呵成。</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 定位（浮層卡，重疊 Hero 下緣） -->
+  <section class="float-card">
+    <div class="wrap">
+      <div class="panel">
+        <span class="eyebrow">What Makes Us Different</span>
+        <h2 class="title">我們是一個健康導航平台</h2>
+        <p class="lead center">不是保健食品品牌，不是診所，不是健身房，也不是單一健康課程。我們整合健康科技、AI 分析、跨領域專業與生活方案，協助每個人找到真正適合自己的健康方式。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PrysmiO 介紹（左圖右文） -->
+  <section class="block">
+    <div class="wrap split">
+      <div class="ph" data-ph="PrysmiO 15 秒健康光譜檢測" data-img="prysmio-feature.jpg" style="min-height:380px"></div>
+      <div>
+        <span class="eyebrow">PrysmiO · 15-Second Scan</span>
+        <h2 class="title">PrysmiO　15 秒健康光譜檢測</h2>
+        <p class="lead mt20">只要把手指放上 PrysmiO，15 秒就能透過高光譜檢測，把你的健康量化成「健康光譜指數」，並在 App 上即時看見結果。</p>
+        <div style="display:grid;gap:13px;margin-top:24px">
+          <div class="pchk"><i>✦</i><span>AI 智能分析——多項生理訊號綜合評估</span></div>
+          <div class="pchk"><i>✦</i><span>健康光譜指數——100～1000，一眼看懂</span></div>
+          <div class="pchk"><i>✦</i><span>App 同步記錄——隨時追蹤健康變化</span></div>
+          <div class="pchk"><i>✦</i><span>五大面向解讀——睡眠・免疫・肌膚・體態・情緒</span></div>
+        </div>
+        <a class="btn btn-primary mt28" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">我要開始健康解碼 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 完整旅程：五步融合具體機制 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">How It Works</span><h2 class="title">從看見，到建立恢復力</h2>
+      <p class="lead center">五個階段，把「健康」變成你做得到的生活方式。</p></div>
+      <div class="flow mt40">
+        <div class="flow-step"><div class="flow-num">01</div>
+          <div class="flow-body"><div class="ftext"><h3>看見健康　·　PrysmiO 15 秒檢測</h3><p>採用高光譜檢測技術，只要 15 秒，將健康量化為 100～1000 的「健康光譜指數」，並解讀睡眠、免疫、肌膚、體態、情緒五大面向。</p></div><div class="ph fimg" data-ph="PrysmiO 檢測" data-img="flow-1.jpg"></div></div></div>
+        <div class="flow-step"><div class="flow-num">02</div>
+          <div class="flow-body"><div class="ftext"><h3>理解健康　·　AI 健康解碼（加入 LINE@）</h3><p>選一個你最想先改善的面向，AI 分析你的生活型態，產出專屬健康報告與個人化改善方向。</p></div><div class="ph fimg" data-ph="AI 健康解碼報告" data-img="flow-2.jpg"></div></div></div>
+        <div class="flow-step"><div class="flow-num">03</div>
+          <div class="flow-body"><div class="ftext"><h3>整合方案　·　恢復力管理顧問</h3><p>由恢復力管理顧問整合恢復力生態系的健康資源，為你搭配真正適合的方案，而非單一答案。</p></div><div class="ph fimg" data-ph="恢復力管理顧問" data-img="flow-3.jpg"></div></div></div>
+        <div class="flow-step"><div class="flow-num">04</div>
+          <div class="flow-body"><div class="ftext"><h3>陪伴改善</h3><p>透過持續陪伴與生活實踐，協助你把方案落實在每天的生活裡。</p></div><div class="ph fimg" data-ph="陪伴改善" data-img="flow-4.jpg"></div></div></div>
+        <div class="flow-step"><div class="flow-num">05</div>
+          <div class="flow-body"><div class="ftext"><h3>建立恢復力</h3><p>讓恢復力成為每天的生活方式，而不只是短期的努力。</p></div><div class="ph fimg" data-ph="建立恢復力" data-img="flow-5.jpg"></div></div></div>
+      </div>
+      <div class="center mt28"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入 LINE 開始分析 →</a></div>
+    </div>
+  </section>
+
+  <!-- 健康光譜指數（精簡） -->
+  <section class="block" style="padding:48px 0">
+    <div class="wrap" style="max-width:820px;text-align:center">
+      <span class="eyebrow">Health Spectrum Index</span><h2 class="title">健康光譜指數　100～1000</h2>
+      <div style="margin:26px 0 0">
+        <div style="height:14px;border-radius:999px;background:linear-gradient(90deg,#D98C6A,#E0B86A,#CBD083,#94BE8C,#6FA3C9,#9B8FD0)"></div>
+        <div style="display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted);margin-top:10px;text-align:center">
+          <span>100<br>偏低</span><span>300<br>稍弱</span><span>500<br>中等</span><span>700<br>良好</span><span>1000<br>優秀</span>
+        </div>
+      </div>
+      <p class="lead center" style="margin-top:20px;font-size:.95rem">分數越高，代表身體機能越佳、狀態越理想。</p>
+      <div class="center mt28"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">看看我的健康光譜 →</a></div>
+    </div>
+  </section>
+
+  <!-- 五大面向 sample -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">5 Dimensions</span><h2 class="title">五大面向健康解讀</h2>
+      <p class="lead center">PrysmiO 一次量測，五個面向同時被看見。（以下為示意分數）</p></div>
+      <div style="max-width:700px;margin:36px auto 0;display:grid;gap:13px">
+        <div class="card" style="display:flex;align-items:center;gap:18px;padding:18px 24px">
+          <img src="images/pillar-sleep.jpg" alt="" style="width:120px;height:88px;margin:-18px 10px -18px -24px;border-radius:14px 0 0 14px;object-fit:cover;flex-shrink:0">
+          <div style="flex:1"><h3 style="font-size:1.08rem;margin:0">睡眠狀態</h3><p style="margin:2px 0 0;font-size:.86rem">深層睡眠、睡眠品質與修復能力</p></div>
+          <span style="background:var(--cream-2);color:var(--sage-deep);font-family:'Noto Serif TC';padding:6px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap">72・良好</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;padding:18px 24px">
+          <img src="images/pillar-immune.jpg" alt="" style="width:120px;height:88px;margin:-18px 10px -18px -24px;border-radius:14px 0 0 14px;object-fit:cover;flex-shrink:0">
+          <div style="flex:1"><h3 style="font-size:1.08rem;margin:0">免疫狀態</h3><p style="margin:2px 0 0;font-size:.86rem">免疫防禦、發炎反應與恢復力</p></div>
+          <span style="background:var(--cream-2);color:var(--sage-deep);font-family:'Noto Serif TC';padding:6px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap">65・中等</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;padding:18px 24px">
+          <img src="images/pillar-skin.jpg" alt="" style="width:120px;height:88px;margin:-18px 10px -18px -24px;border-radius:14px 0 0 14px;object-fit:cover;flex-shrink:0">
+          <div style="flex:1"><h3 style="font-size:1.08rem;margin:0">肌膚狀態</h3><p style="margin:2px 0 0;font-size:.86rem">保濕度、彈性與肌膚老化指數</p></div>
+          <span style="background:var(--cream-2);color:var(--sage-deep);font-family:'Noto Serif TC';padding:6px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap">78・良好</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;padding:18px 24px">
+          <img src="images/pillar-body.jpg" alt="" style="width:120px;height:88px;margin:-18px 10px -18px -24px;border-radius:14px 0 0 14px;object-fit:cover;flex-shrink:0">
+          <div style="flex:1"><h3 style="font-size:1.08rem;margin:0">體態狀態</h3><p style="margin:2px 0 0;font-size:.86rem">代謝效率、脂肪管理與體能狀態</p></div>
+          <span style="background:var(--cream-2);color:var(--sage-deep);font-family:'Noto Serif TC';padding:6px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap">58・中等</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;padding:18px 24px">
+          <img src="images/pillar-emotion.jpg" alt="" style="width:120px;height:88px;margin:-18px 10px -18px -24px;border-radius:14px 0 0 14px;object-fit:cover;flex-shrink:0">
+          <div style="flex:1"><h3 style="font-size:1.08rem;margin:0">情緒狀態</h3><p style="margin:2px 0 0;font-size:.86rem">壓力指數、情緒平衡與自律神經</p></div>
+          <span style="background:var(--cream-2);color:var(--sage-deep);font-family:'Noto Serif TC';padding:6px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap">63・中等</span>
+        </div>
+      </div>
+      <div class="center mt40"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">開始 AI 健康解碼 →</a></div>
+    </div>
+  </section>
+
+  <!-- 可信度 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Why Trust PrysmiO</span><h2 class="title">值得信賴的檢測基礎</h2></div>
+      <div class="grid g3 mt40">
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/feat-prysmio.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>高光譜檢測技術</h3><p>由史丹佛大學、上海交通大學實驗支持。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/trust-doctor.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>專業醫師推薦</h3><p>多位醫師與專業人士共同推薦。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/trust-map.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>全台巡迴量測</h3><p>於全台 30+ 里民與社福單位實地服務。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 媒體報導 & 醫師見證 -->
+  <section class="block" style="padding-bottom:30px">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Media &amp; Testimonials</span><h2 class="title">媒體報導 &amp; 醫師見證</h2>
+      <p class="lead center">看看醫師與媒體，怎麼看待 PrysmiO 檢測。</p></div>
+
+      <div class="video" id="featVideo" data-yt="yvDMUZel3HQ" style="margin:36px auto 0;max-width:860px">
+        <div class="ph" data-ph="精選影片 縮圖" data-img="video-feature.jpg" style="position:absolute;inset:0;min-height:0;height:100%;border-radius:0"></div>
+        <div class="play"><span class="pbtn">▶</span></div>
+      </div>
+
+      <div class="mcarousel">
+        <button class="cbtn prev" onclick="mrailScroll(-1)" aria-label="上一則">‹</button>
+        <div class="mrail" id="mediaRail">
+          <a class="post" href="https://www.gvm.com.tw/article/130426" target="_blank" rel="noopener"><div class="ph media-thumb" data-ph="報導縮圖 1" data-img="media-1.jpg"></div><div class="body"><div class="cat">遠見雜誌</div><h3>全球長壽科學尋找的「健康老化」關鍵，就在每日的健康量測裡</h3><p>遠見雜誌・廣編企劃</p></div></a>
+          <a class="post" href="https://www.gvm.com.tw/article/130428" target="_blank" rel="noopener"><div class="ph media-thumb" data-ph="報導縮圖 2" data-img="media-2.jpg"></div><div class="body"><div class="cat">遠見雜誌</div><h3>15 秒看見健康盲點！Prysm iO 如何用數據驅動日常健康管理？</h3><p>遠見雜誌・廣編企劃</p></div></a>
+          <a class="post" href="https://news.everydayhealth.com.tw/2026/06/05/47364-nuskin" target="_blank" rel="noopener"><div class="ph media-thumb" data-ph="報導縮圖 3" data-img="media-3.jpg"></div><div class="body"><div class="cat">早安健康</div><h3>台灣營養學之父謝明哲教授：從「知道營養」走向「看見健康」</h3><p>早安健康新訊平台</p></div></a>
+          <a class="post" href="https://www.facebook.com/share/p/17z6Qcbcx6/" target="_blank" rel="noopener"><div class="ph media-thumb" data-ph="報導縮圖 4" data-img="media-4.jpg"></div><div class="body"><div class="cat">專家觀點</div><h3>謝明哲教授，關注 Prysm iO 高光譜智慧掃描儀</h3><p>Facebook・謝明哲教授</p></div></a>
+          <a class="post" href="https://www.facebook.com/share/r/1BU6c4UMdy/" target="_blank" rel="noopener"><div class="ph media-thumb" data-ph="報導縮圖 5" data-img="media-5.jpg"></div><div class="body"><div class="cat">合作研究</div><h3>全球知名學者合作研究・史丹佛醫學院 Dr. Anne Chang</h3><p>Facebook・影音分享</p></div></a>
+        </div>
+        <button class="cbtn next" onclick="mrailScroll(1)" aria-label="下一則">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-flora">
+    <div class="ph bg" data-ph="加入 LINE 背景主視覺" data-img="decode-cta-bg.jpg"></div>
+    <div class="cta-flora-inner"><div class="wrap">
+      <div class="glass">
+        <h2>加入 LINE@，開啟 AI 健康解碼</h2>
+        <p>完成檢測後，立即取得你的專屬健康報告與個人化改善方向。</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a>
+          <button class="btn btn-ghost" onclick="go('ecosystem')">探索恢復力生態系</button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+</div>
+
+<!-- ==================================================== 04 ECOSYSTEM -->
+<div class="page" id="page-ecosystem" data-page="ecosystem">
+  <section class="page-hero hero-dark">
+    <div class="ph pbg up-eco" data-ph="恢復力生態系 主視覺" data-img="ecosystem-hero.jpg"></div>
+    <div class="inner"><div class="wrap">
+      <div class="page-head" style="padding:0;max-width:620px">
+        <div class="crumb">04 ｜ RECOVERY ECOSYSTEM</div>
+        <h1 style="font-size:2.9rem">恢復力生態系</h1>
+        <div class="irid-line" style="margin:22px 0 18px"></div>
+        <p class="lead">整合多元專業介入方式，陪你走在健康恢復的每一步。我們相信，健康不是單一解方，而是多個面向相互影響、彼此支持的系統——透過 AI 科技、專業檢測與跨領域資源整合，協助你找到最需要改善的方向，啟動全面恢復力。</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 四步流程 -->
+  <section class="block" style="padding-top:24px">
+    <div class="wrap">
+      <div class="hflow">
+        <div class="node"><div class="k">STEP 01</div><h4>AI 健康解碼</h4><p>了解身體狀態與生活習慣。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 02</div><h4>PrysmiO 分析</h4><p>精準量化你的恢復力狀態。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 03</div><h4>找到優先方向</h4><p>找出目前最值得改善的關鍵環節。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 04</div><h4>整合多元介入</h4><p>串聯最適合你的專業資源，打造專屬恢復方案。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 六大面向 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Six Dimensions</span><h2 class="title">你的健康恢復力，是六大面向共同作用的結果</h2>
+      <p class="lead center">恢復力不是單一指標，而是六個彼此影響的面向。我們從每一個面向，整合對應的專業介入方式。</p></div>
+      <div class="grid g3 mt40">
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#DCE5D3">🧬</span><span class="no">01</span><h3 style="margin:0;font-size:1.16rem">細胞保護力</h3></div>
+          <p class="pp">提升細胞防禦力，打好健康的基礎。</p>
+          <div class="tags"><span class="itag">抗氧化與修復</span><span class="itag">營養素補充</span><span class="itag">天然植化素</span><span class="itag">細胞健康檢測</span></div></div>
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#E7DBC9">🛡️</span><span class="no">02</span><h3 style="margin:0;font-size:1.16rem">發炎平衡力</h3></div>
+          <p class="pp">降低慢性發炎，維持內在平衡。</p>
+          <div class="tags"><span class="itag">抗發炎飲食</span><span class="itag">Omega-3 補充</span><span class="itag">腸道健康</span><span class="itag">過敏與免疫調節</span></div></div>
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#E6E1EC">🧠</span><span class="no">03</span><h3 style="margin:0;font-size:1.16rem">神經調節力</h3></div>
+          <p class="pp">穩定神經與壓力反應，提升睡眠與情緒狀態。</p>
+          <div class="tags"><span class="itag">睡眠優化</span><span class="itag">壓力調節</span><span class="itag">情緒與心理支持</span><span class="itag">放鬆與正念練習</span><span class="itag">推拿經絡按摩</span></div></div>
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#D6E4E2">🔄</span><span class="no">04</span><h3 style="margin:0;font-size:1.16rem">循環與代謝力</h3></div>
+          <p class="pp">促進能量代謝與血液循環，維持身體運作效率。</p>
+          <div class="tags"><span class="itag">促進血液循環</span><span class="itag">代謝功能優化</span><span class="itag">維持細胞營養代謝</span></div></div>
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#EFE0D2">🏃</span><span class="no">05</span><h3 style="margin:0;font-size:1.16rem">身體功能力</h3></div>
+          <p class="pp">強化身體功能與行動能力。</p>
+          <div class="tags"><span class="itag">肌力訓練</span><span class="itag">柔軟度與伸展</span><span class="itag">體能提升</span><span class="itag">物理治療／復健</span><span class="itag">姿勢與動作評估</span></div></div>
+        <div class="card dim"><div class="top"><span class="orb-s" style="background:#DDE6D0">🌱</span><span class="no">06</span><h3 style="margin:0;font-size:1.16rem">生活型態力</h3></div>
+          <p class="pp">建立良好習慣與環境，讓健康能持續被照顧。</p>
+          <div class="tags"><span class="itag">習慣建立／行為設計</span><span class="itag">健康教育／知識學習</span><span class="itag">壓力與情緒管理</span><span class="itag">社群支持／陪伴</span><span class="itag">AI 健康解碼</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 中段大圖 Banner -->
+  <section class="block" style="padding:46px 0 0">
+    <div class="wrap"><div class="ph" data-ph="恢復力生態系 形象橫幅" data-img="ecosystem-banner.jpg" style="min-height:440px"></div></div>
+  </section>
+
+  <!-- 為什麼先做解碼 -->
+  <section class="block" style="padding-top:34px">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Why Start Here</span><h2 class="title">為什麼要先做 AI 健康解碼與 PrysmiO 分析？</h2></div>
+      <div class="why mt40">
+        <div><div class="wic" style="background:none;width:60px;height:60px"><img src="images/why-precise.png" alt="" style="width:60px;height:60px;object-fit:contain"></div><b>精準定位</b><small>找出你目前最需要改善的關鍵環節</small></div>
+        <div><div class="wic" style="background:none;width:60px;height:60px"><img src="images/why-integrate.png" alt="" style="width:60px;height:60px;object-fit:contain"></div><b>整合資源</b><small>串聯跨領域專業與最佳介入方式</small></div>
+        <div><div class="wic" style="background:none;width:60px;height:60px"><img src="images/why-personal.png" alt="" style="width:60px;height:60px;object-fit:contain"></div><b>個人化方案</b><small>依你的狀況與目標，客製化整合建議</small></div>
+        <div><div class="wic" style="background:none;width:60px;height:60px"><img src="images/why-system.png" alt="" style="width:60px;height:60px;object-fit:contain"></div><b>系統性改善</b><small>循序漸進，全面提升你的恢復力</small></div>
+        <div><div class="wic" style="background:none;width:60px;height:60px"><img src="images/why-companion.png" alt="" style="width:60px;height:60px;object-fit:contain"></div><b>持續陪伴</b><small>AI 與專業團隊長期陪伴與調整優化</small></div>
+      </div>
+      <div class="center mt40"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入 LINE 開始 →</a></div>
+    </div>
+  </section>
+
+  <!-- 專業夥伴 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="ph" data-ph="專家齊聚 形象橫幅" data-img="partner-banner.jpg" style="min-height:440px;margin-bottom:44px"></div>
+      <div class="center"><span class="eyebrow">Collaboration Ecosystem</span><h2 class="title">恢復力合作生態系</h2>
+      <p class="lead center">我們相信，每個人的健康需求都不同。抗老研究室串聯營養、運動、睡眠、心理、醫療等不同專業領域，依據 AI 健康解碼與恢復力分析結果，協助媒合適合的合作夥伴，打造更完整的健康支持系統。</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-top:40px">
+        <div class="card partner"><h4><span class="pic">🥗</span>營養與飲食合作夥伴</h4>
+          <div class="pr"><b>營養師／功能醫學營養師</b><span>營養評估、飲食規劃、營養素補充建議</span></div>
+          <div class="pr"><b>食療師／植化素專家</b><span>天然食材應用、抗氧化飲食、食療設計</span></div>
+          <div class="pr"><b>健康管理師</b><span>飲食習慣調整、體重管理、健康追蹤</span></div></div>
+        <div class="card partner"><h4><span class="pic">🏃</span>運動與身體功能合作夥伴</h4>
+          <div class="pr"><b>體適能教練</b><span>運動評估、肌力訓練、體能提升</span></div>
+          <div class="pr"><b>物理治療師／復健師</b><span>疼痛評估、復健治療、功能性訓練</span></div>
+          <div class="pr"><b>瑜伽老師／皮拉提斯老師</b><span>柔軟度訓練、核心穩定、姿勢改善</span></div>
+          <div class="pr"><b>運動按摩師／肌筋膜放鬆專家</b><span>肌肉放鬆、運動恢復、筋膜調整</span></div></div>
+        <div class="card partner"><h4><span class="pic">🧠</span>身心平衡合作夥伴</h4>
+          <div class="pr"><b>心理師／諮商心理師</b><span>壓力管理、情緒調節、心理支持</span></div>
+          <div class="pr"><b>睡眠顧問／睡眠專家</b><span>睡眠評估、睡眠優化、作息調整</span></div>
+          <div class="pr"><b>正念冥想老師／呼吸教練</b><span>正念練習、呼吸訓練、放鬆技巧</span></div>
+          <div class="pr"><b>推拿經絡按摩師</b><span>經絡調理、推拿按摩、氣血循環</span></div>
+          <div class="pr"><b>芳療師／精油治療師</b><span>精油調理、芳香療法、情緒放鬆</span></div></div>
+        <div class="card partner"><h4><span class="pic">🩺</span>醫療與健康評估合作資源</h4>
+          <div class="pr"><b>醫療合作資源</b><span>功能醫學、家醫科、內分泌等評估與治療建議</span></div>
+          <div class="pr"><b>檢測顧問／健康數據分析師</b><span>檢測解讀、數據分析、健康風險評估</span></div>
+          <div class="pr"><b>藥師／營養保健品顧問</b><span>保健品諮詢、營養補充、安全評估</span></div></div>
+        <div class="card partner"><h4><span class="pic">💚</span>習慣建立與健康陪伴</h4>
+          <div class="pr"><b>健康教練／習慣養成教練</b><span>目標設定、習慣建立、行為改變</span></div>
+          <div class="pr"><b>健康管理師／個案管理師</b><span>健康追蹤、進度管理、方案調整</span></div>
+          <div class="pr"><b>AI 健康陪伴員</b><span>數據追蹤、提醒鼓勵、持續優化</span></div></div>
+      </div>
+      <div style="margin:30px auto 0;max-width:860px;text-align:center">
+        <b style="color:var(--forest);font-size:.92rem">合作說明</b>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.85;margin:8px 0 0">抗老研究室為健康教育與恢復力整合平台，並非醫療院所。本頁所列為合作專業領域，將依個人需求協助媒合適合的合作夥伴，實際服務由各合作專業人員提供。</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 核心價值 + CTA -->
+  <section class="block">
+    <div class="wrap">
+      <div class="ph" data-ph="顧問解碼諮詢" data-img="consultant-scene.jpg" style="aspect-ratio:16/7;min-height:0;margin-bottom:40px"></div>
+      <div class="center"><p class="lead center">每一位專家，都是你健康恢復力的重要推手。我們整合專業力量，為你打造最適合的恢復方案。</p></div>
+      <div class="grid g4 mt40" style="text-align:center">
+        <div class="card tint"><div class="ic" style="background:none;width:72px;height:72px;margin:0 auto 14px"><img src="images/value-science.png" alt="" style="width:72px;height:72px;object-fit:contain"></div><h3>科學為基礎</h3></div>
+        <div class="card tint"><div class="ic" style="background:none;width:72px;height:72px;margin:0 auto 14px"><img src="images/value-shield.png" alt="" style="width:72px;height:72px;object-fit:contain"></div><h3>專業為後盾</h3></div>
+        <div class="card tint"><div class="ic" style="background:none;width:72px;height:72px;margin:0 auto 14px"><img src="images/value-integrate.png" alt="" style="width:72px;height:72px;object-fit:contain"></div><h3>整合為關鍵</h3></div>
+        <div class="card tint"><div class="ic" style="background:none;width:72px;height:72px;margin:0 auto 14px"><img src="images/value-companion.png" alt="" style="width:72px;height:72px;object-fit:contain"></div><h3>陪伴為核心</h3></div>
+      </div>
+      <div class="center mt40"><button class="btn btn-primary" onclick="go('platform')">先做 AI 健康解碼 →</button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 05 CONSULTANTS -->
+<div class="page" id="page-consultant" data-page="consultant">
+
+  <!-- Hero -->
+  <section class="page-hero hero-dark">
+    <div class="ph pbg up-consult" data-ph="顧問陪伴 主視覺" data-img="consultant-hero.jpg"></div>
+    <div class="inner"><div class="wrap">
+      <div class="page-head" style="padding:0;max-width:600px">
+        <div class="crumb">05 ｜ RECOVERY CONSULTANTS</div>
+        <h1 style="font-size:2.6rem;line-height:1.32">不只是專業，<br><span class="irid-text">更重要的是一路有人陪伴。</span></h1>
+        <div class="irid-line" style="margin:22px 0 18px"></div>
+        <p class="lead">每一份恢復力計畫，都從一位恢復力顧問開始。他們會理解你的狀況，陪伴你建立健康習慣，並在需要時，串聯最適合的專業顧問。</p>
+        <button class="btn btn-primary mt28" onclick="go('platform')">開始健康解碼 →</button>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 恢復力顧問・你的健康陪跑員 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="split" style="align-items:center">
+        <div>
+          <span class="eyebrow">Recovery Consultant</span>
+          <h2 class="title">恢復力顧問<br>你的健康陪跑員</h2>
+          <p class="lead mt20">不是醫師，也不是營養師，而是最了解你的人。陪伴你每一步，讓改變更簡單、持續、有效。</p>
+        </div>
+        <div class="ph" data-ph="恢復力顧問 陪跑" data-img="consultant-coach.jpg" style="height:320px;min-height:0"></div>
+      </div>
+      <div class="center" style="margin-top:50px"><span class="eyebrow">How We Walk With You</span><h2 class="title" style="font-size:1.5rem">我們如何陪伴你</h2></div>
+      <div class="hflow mt28">
+        <div class="node"><div class="k">STEP 01</div><h4>PrysmiO 分析</h4><p>15 秒檢測，量化恢復力指數。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 02</div><h4>AI 健康解碼</h4><p>深入了解你的身體與生活狀況。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 03</div><h4>建立改善方案</h4><p>依據數據與需求，制定策略。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 04</div><h4>持續陪伴追蹤</h4><p>定期關心與調整，陪你走得更遠。</p></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="k">STEP 05</div><h4>串聯專業資源</h4><p>需要時，為你找到最適合的專家。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 串聯最適合的專業 -->
+  <section class="block">
+    <div class="wrap split" style="align-items:center">
+      <div>
+        <span class="eyebrow">Connected When You Need</span>
+        <h2 class="title">當需要更深入的協助，<br>我們串聯最適合的專業。</h2>
+        <p class="lead mt20">恢復力顧問會根據你的需求，為你媒合最合適的專業顧問團隊，提供更完整的支持。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:22px">
+          <span class="itag">醫療評估</span><span class="itag">營養飲食</span><span class="itag">中醫調理</span><span class="itag">心理支持</span><span class="itag">運動體能</span>
+        </div>
+      </div>
+      <div class="ph" data-ph="專業顧問團隊 協作" data-img="consultant-collab.jpg" style="min-height:340px;align-self:stretch"></div>
+    </div>
+  </section>
+
+  <!-- 專業顧問團隊 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div><span class="eyebrow">Professional Experts</span><h2 class="title">專業顧問團隊</h2>
+      <p class="lead">各領域專家，專業分工，協力守護你的健康。（以下為團隊藍圖，將逐步到位）</p></div>
+      <div class="grid g3 mt40">
+        <div class="post" onclick="openMember('chen')"><div class="ph mtop" data-ph="陳進發 老師" data-img="member-chen.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">經絡推拿</div><h3>陳進發 老師</h3><p>徒手調理，疏通氣血、放鬆緊繃，幫助身體恢復循環。</p><div class="hl">經絡推拿教育學會理事長 · 體育運動碩士 · 教育部講師 · 近 40 年推拿實務與教學</div><div class="more">看完整資歷 →</div></div></div>
+        <div class="post" onclick="openMember('chien')"><div class="ph mtop" data-ph="簡伯容 老師" data-img="member-chien.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">瑜伽頌缽</div><h3>簡伯容 老師</h3><p>身心放鬆，引導呼吸與動作，調節自律神經與情緒。</p><div class="hl">美國瑜伽聯盟 E-RYT200 · 雲門舞集 7 年 · 北藝大現代舞・舞齡逾 30 年</div><div class="more">看完整資歷 →</div></div></div>
+        <div class="post"><div class="ph" data-ph="專業醫師" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">醫療評估</div><h3>專業醫師</h3><p>醫療評估與診斷，提供專業醫療建議與健康風險管理。</p></div></div>
+        <div class="post"><div class="ph" data-ph="營養師" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">營養飲食</div><h3>營養師</h3><p>飲食營養規劃，制定個人化飲食與營養策略。</p></div></div>
+        <div class="post"><div class="ph" data-ph="體態教練" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">運動體能</div><h3>體態教練</h3><p>運動與身體機能，設計運動計畫、提升體能與功能。</p></div></div>
+        <div class="post"><div class="ph" data-ph="心理師" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">心理支持</div><h3>心理師</h3><p>情緒與心理支持，協助壓力調適、建立心理韌性。</p></div></div>
+        <div class="post"><div class="ph" data-ph="中醫師" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">中醫調理</div><h3>中醫師</h3><p>中醫調理與體質，調理體質平衡、改善不適症狀。</p></div></div>
+        <div class="post"><div class="ph" data-ph="睡眠顧問" data-img="member-soon.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="cat">睡眠優化</div><h3>睡眠顧問</h3><p>睡眠品質優化，改善睡眠問題、提升恢復力。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作據點・遍佈全台 -->
+  <section class="block">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <span class="eyebrow">Our Partner Sites</span>
+        <h2 class="title">合作據點・遍佈全台</h2>
+        <p class="lead mt20">我們與全台社區、企業、機構合作，將健康管理帶進生活的每個角落。（此為發展目標）</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+        <div>
+          <div class="site"><b>里民活動中心</b><span>健康講座與檢測服務</span></div>
+          <div class="site"><b>社區發展協會</b><span>健康促進與方案合作</span></div>
+          <div class="site"><b>長照機構</b><span>長者健康管理服務</span></div>
+        </div>
+        <div>
+          <div class="site"><b>企業單位</b><span>員工健康管理方案</span></div>
+          <div class="site"><b>健身／瑜伽中心</b><span>運動與恢復力推廣</span></div>
+          <div class="site"><b>醫療院所</b><span>健康管理合作</span></div>
+        </div>
+        <div>
+          <div class="site"><b>學校單位</b><span>健康教育與推廣</span></div>
+          <div class="site"><b>社福單位</b><span>弱勢關懷與健康支持</span></div>
+          <div class="site"><b>更多合作夥伴</b><span>持續增加中…</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結語 CTA -->
+  <section class="block soft-band">
+    <div class="wrap center">
+      <h2 class="title" style="font-size:1.6rem">AI 提供分析，人，提供陪伴。</h2>
+      <p class="lead center">恢復力，從來不是一位專家的力量，而是一群人的合作。</p>
+      <div class="center mt28"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">開始 AI 健康解碼 →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 07 JOURNAL -->
+<div class="page" id="page-journal" data-page="journal">
+  <div class="wrap page-head">
+    <div class="crumb">06 ｜ RECOVERY JOURNAL</div>
+    <h1>健康知識站</h1>
+    <p class="lead">破除保健迷思，用科學理解身體。</p>
+  </div>
+
+  <section class="block" style="padding-top:26px">
+    <div class="wrap">
+      <div class="chips" id="journalChips">
+        <span class="on" onclick="filterPosts(this,'全部')">全部</span><span onclick="filterPosts(this,'保健迷思')">保健迷思</span><span onclick="filterPosts(this,'健康QA')">健康QA</span><span onclick="filterPosts(this,'睡眠')">睡眠</span><span onclick="filterPosts(this,'免疫')">免疫</span><span onclick="filterPosts(this,'情緒')">情緒</span><span onclick="filterPosts(this,'肌膚')">肌膚</span><span onclick="filterPosts(this,'體態')">體態</span><span onclick="filterPosts(this,'抗氧化')">抗氧化</span><span onclick="filterPosts(this,'營養')">營養</span><span onclick="filterPosts(this,'AI健康')">AI健康</span><span onclick="filterPosts(this,'生活方式')">生活方式</span>
+      </div>
+      <div class="grid g3" id="journalGrid">
+        <div class="post" data-cat="抗氧化" onclick="openArticle('oxy')"><div class="ph" data-ph="抗氧化" data-img="art-oxy-cover.jpg"></div><div class="body"><div class="cat">抗氧化</div><h3>青春抗氧化教室：從自由基到抗老防線</h3><p>4 堂課帶你看懂自由基、氧化壓力與抗老防禦。</p></div></div>
+        <div class="post" data-cat="營養" onclick="openArticle('health')"><div class="ph" data-ph="營養" data-img="art-health-cover.jpg"></div><div class="body"><div class="cat">營養</div><h3>9 個抗老保健重點：從飲食到睡眠的日常防老</h3><p>把抗老落實在每一天的九個關鍵習慣。</p></div></div>
+        <div class="post" data-cat="肌膚" onclick="openArticle('skin')"><div class="ph" data-ph="肌膚" data-img="art-skin-cover.jpg"></div><div class="body"><div class="cat">肌膚</div><h3>抗老養膚指南：把保養變簡單的 6 個主題</h3><p>釐清順序、挑對產品、養對肌膚。</p></div></div>
+      </div>
+      <p id="journalEmpty" class="lead" style="display:none;text-align:center;padding:30px 0">這個分類的文章正在準備中，敬請期待。</p>
+    </div>
+  </section>
+
+  <!-- 影音・恢復力影音教室 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="vhub-head">
+        <div>
+          <span class="eyebrow">Video</span>
+          <h2 class="title" style="margin-bottom:6px">恢復力影音教室</h2>
+          <p class="lead" style="margin:0">不同領域的合作專家，帶你從不同角度理解恢復力。</p>
+        </div>
+        <a class="vhub-more" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">查看所有影片 →</a>
+      </div>
+
+      <div class="vtop">
+        <!-- 本週精選 -->
+        <div>
+          <div class="vlabel">本週精選</div>
+          <div class="vfeat">
+            <div class="vfeat-thumb" onclick="openVid(0)">
+              <img src="images/poster-feel.jpg" alt="" onerror="this.style.display='none'">
+              <div class="vplay"><span>▶</span></div>
+            </div>
+            <div class="vfeat-info">
+              <div class="cat">經絡推拿</div>
+              <h3>筋柔了，身體才更有恢復力</h3>
+              <div class="by">陳進發老師｜經絡推拿健康養身館</div>
+              <p>從筋膜與經絡循環的角度，帶你了解身體如何維持恢復力，以及日常怎麼放鬆緊繃、幫助循環。</p>
+              <a class="btn btn-primary" onclick="openVid(0)" style="cursor:pointer">觀看影片 →</a>
+            </div>
+          </div>
+        </div>
+        <!-- 最新影片 -->
+        <div>
+          <div class="vlabel">最新影片</div>
+          <div class="vlatest">
+            <div class="vcard" onclick="openVid(0)">
+              <div class="vthumb"><img src="images/poster-feel.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">經絡推拿</div><h4>筋柔了，身體才更有恢復力</h4><small>陳進發老師</small></div>
+            </div>
+            <div class="vcard" onclick="openVid(1)">
+              <div class="vthumb"><img src="images/poster-nutri.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">營養補充</div><h4>為什麼以前的人比較少補保健品？</h4><small>陳進發老師</small></div>
+            </div>
+            <div class="vcard" onclick="openVid(2)">
+              <div class="vthumb"><img src="images/vthumb-3.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">健康管理</div><h4>做了這麼多，真的有效嗎？</h4><small>陳進發老師</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 依專家瀏覽 -->
+      <div class="vbrowse">
+        <div class="vlabel">依專家瀏覽</div>
+        <div class="vtabs">
+          <button class="vtab on" onclick="filterVid(this,'all')">全部</button>
+          <button class="vtab" onclick="filterVid(this,'經絡推拿')">經絡推拿</button>
+          <button class="vtab" onclick="filterVid(this,'營養師')">營養師</button>
+          <button class="vtab" onclick="filterVid(this,'運動訓練')">運動訓練</button>
+          <button class="vtab" onclick="filterVid(this,'睡眠專家')">睡眠專家</button>
+          <button class="vtab" onclick="filterVid(this,'醫師觀點')">醫師觀點</button>
+          <button class="vtab" onclick="filterVid(this,'心理健康')">心理健康</button>
+        </div>
+        <div class="vcarousel">
+          <button class="cbtn" style="left:-14px" onclick="vrailScroll(-1)">‹</button>
+          <div class="vrail" id="vrail">
+            <div class="vcard" data-cat="經絡推拿" onclick="openVid(0)">
+              <div class="vthumb"><img src="images/poster-feel.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">經絡推拿</div><h4>筋柔了，身體才更有恢復力</h4><small>陳進發老師</small></div>
+            </div>
+            <div class="vcard" data-cat="經絡推拿" onclick="openVid(1)">
+              <div class="vthumb"><img src="images/poster-nutri.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">營養補充</div><h4>為什麼以前的人比較少補保健品？</h4><small>陳進發老師</small></div>
+            </div>
+            <div class="vcard" data-cat="經絡推拿" onclick="openVid(2)">
+              <div class="vthumb"><img src="images/vthumb-3.jpg" alt="" onerror="this.style.display='none'"><div class="vplay"><span>▶</span></div></div>
+              <div class="vmeta"><div class="cat">健康管理</div><h4>做了這麼多，真的有效嗎？</h4><small>陳進發老師</small></div>
+            </div>
+            <div class="vcard soon" data-cat="營養師"><div class="vthumb"><img src="images/soon-cover.jpg" alt="" onerror="this.style.display='none'"><div class="vsoon">敬請期待</div></div><div class="vmeta"><div class="cat">營養師</div><h4>影片準備中</h4><small>合作專家</small></div></div>
+            <div class="vcard soon" data-cat="運動訓練"><div class="vthumb"><img src="images/soon-cover.jpg" alt="" onerror="this.style.display='none'"><div class="vsoon">敬請期待</div></div><div class="vmeta"><div class="cat">運動訓練</div><h4>影片準備中</h4><small>合作專家</small></div></div>
+            <div class="vcard soon" data-cat="睡眠專家"><div class="vthumb"><img src="images/soon-cover.jpg" alt="" onerror="this.style.display='none'"><div class="vsoon">敬請期待</div></div><div class="vmeta"><div class="cat">睡眠專家</div><h4>影片準備中</h4><small>合作專家</small></div></div>
+            <div class="vcard soon" data-cat="醫師觀點"><div class="vthumb"><img src="images/soon-cover.jpg" alt="" onerror="this.style.display='none'"><div class="vsoon">敬請期待</div></div><div class="vmeta"><div class="cat">醫師觀點</div><h4>影片準備中</h4><small>合作專家</small></div></div>
+            <div class="vcard soon" data-cat="心理健康"><div class="vthumb"><img src="images/soon-cover.jpg" alt="" onerror="this.style.display='none'"><div class="vsoon">敬請期待</div></div><div class="vmeta"><div class="cat">心理健康</div><h4>影片準備中</h4><small>合作專家</small></div></div>
+          </div>
+          <button class="cbtn" style="right:-14px" onclick="vrailScroll(1)">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap center">
+      <h2 class="title" style="font-size:1.4rem">想知道你的恢復力？</h2>
+      <div class="center mt24" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 06b ARTICLE -->
+<div class="page" id="page-article" data-page="article">
+  <div class="art-cover" id="artCover"></div>
+  <div class="art-wrap">
+    <a class="art-back" onclick="go('journal')">← 回知識站</a>
+    <div class="art-cat" id="artCat"></div>
+    <h1 class="art-title" id="artTitle"></h1>
+    <div class="art-meta" id="artMeta"></div>
+    <div class="art-body" id="artBody"></div>
+  </div>
+  <div class="art-cta">
+    <div class="art-cta-inner">
+      <h3>想知道自己的身體現在的狀態？</h3>
+      <p>加入官方 LINE，用 AI 健康解碼看見你的恢復力。</p>
+      <a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">開始 AI 健康解碼 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================================================== 08 STORIES -->
+<div class="page" id="page-stories" data-page="stories">
+  <div class="wrap page-head">
+    <div class="crumb">07 ｜ RECOVERY STORIES</div>
+    <h1>恢復故事</h1>
+    <p class="lead">這不是產品見證，而是真實人生。</p>
+  </div>
+
+  <section class="block" style="padding-top:26px">
+    <div class="wrap">
+      <div class="chips">
+        <span class="on">全部</span><span>家庭</span><span>睡眠</span><span>工作</span><span>媽媽</span><span>企業主管</span><span>長者</span><span>社區</span><span>企業</span>
+      </div>
+      <div class="grid g3">
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">媽媽</div><h3>重新找回自己的早晨</h3><p>從睡眠開始，一位母親如何重建生活節奏。</p></div></div>
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">企業主管</div><h3>把健康，排進行事曆</h3><p>高壓工作下，重新理解身體訊號的故事。</p></div></div>
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">長者</div><h3>七十歲，仍持續綻放</h3><p>恢復力，讓晚年生活更有餘裕。</p></div></div>
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">家庭</div><h3>一家人的恢復旅程</h3><p>健康，成為全家共同的生活方式。</p></div></div>
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">社區</div><h3>里民中心裡的改變</h3><p>社區一起建立恢復力的溫暖故事。</p></div></div>
+        <div class="post"><div class="ph" data-ph="敬請期待" data-img="story-cover.jpg"></div><div class="body"><div class="cat">企業</div><h3>讓團隊重新有能量</h3><p>企業如何把恢復力帶進職場。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap center">
+      <h2 class="title" style="font-size:1.4rem">他們已經開始恢復旅程，你也可以。</h2>
+      <div class="center mt24" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================== 09 COMMUNITY -->
+<div class="page" id="page-community" data-page="community">
+  <div class="wrap page-head">
+    <div class="crumb">08 ｜ RECOVERY COMMUNITY</div>
+    <h1>Recovery Community</h1>
+    <p class="lead">從社區到企業，一起把恢復力帶進生活。</p>
+  </div>
+
+  <section class="block" style="padding-top:22px;padding-bottom:0"><div class="wrap"><div class="ph" data-ph="社區推廣 主視覺" data-img="community-hero.jpg" style="min-height:300px"></div></div></section>
+
+
+  <section class="block" style="padding-top:26px">
+    <div class="wrap">
+      <div class="grid g3">
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-center.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>里民中心</h3><p>走進社區，讓恢復力從日常開始。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-charity.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>公益活動</h3><p>讓更多人有機會理解自己的身體。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-enterprise.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>企業合作</h3><p>把健康導航帶進職場與團隊。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-lecture.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>健康講座</h3><p>用科學與陪伴，破除保健迷思。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/trust-map.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>全台抗氧化健康地圖</h3><p>串聯全台的恢復力資源據點。</p></div>
+        <div class="card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/value-hope.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>未來願景</h3><p>打造亞洲最值得信賴的恢復力平台。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">全台目標</span><h2 class="title">一起累積的恢復力</h2></div>
+      <div class="ph" data-ph="全台抗氧化健康地圖" data-img="community-map.jpg" style="min-height:380px;margin-top:36px"></div>
+      <div class="stats mt40">
+        <div class="stat"><b>120+</b><small>合作里民中心</small></div>
+        <div class="stat"><b>48</b><small>企業健康合作</small></div>
+        <div class="stat"><b>300+</b><small>健康講座場次</small></div>
+        <div class="stat"><b>15,000+</b><small>恢復旅程參與者</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社區推廣紀錄 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Community Log</span><h2 class="title">社區推廣紀錄</h2>
+      <p class="lead center">每一場走進社區的檢測與講座，都是恢復力的累積。（持續紀錄中，每季更新）</p></div>
+      <div class="grid g3 mt40">
+        <div class="post evt" onclick="openEvent(0)"><div class="ph" data-ph="活動封面" data-img="event1.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="date">2026 · Q1</div><h3>里民中心・健康量測日</h3><p>走進社區，為里民進行 PrysmiO 恢復力檢測與解讀。</p></div></div>
+        <div class="post evt" onclick="openEvent(1)"><div class="ph" data-ph="活動封面" data-img="event2.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="date">2026 · Q1</div><h3>企業職場・恢復力檢測</h3><p>把健康導航帶進職場，協助團隊看見自己的恢復力狀態。</p></div></div>
+        <div class="post evt" onclick="openEvent(2)"><div class="ph" data-ph="活動封面" data-img="event3.jpg" style="aspect-ratio:4/3;min-height:0;border-radius:0"></div><div class="body"><div class="date">2025 · Q4</div><h3>社區健康講座</h3><p>用科學與陪伴，和居民一起破除常見的保健迷思。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 健康量測足跡 -->
+  <section class="block soft-band">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Where We've Been</span><h2 class="title">健康量測足跡</h2>
+      <p class="lead center">我們實際走進的社區、里辦、機構與活動現場——這些不一定是固定據點，但都留下了恢復力檢測的足跡。（持續累積中）</p></div>
+      <div class="foot-regions">
+        <div class="foot-region"><h4>新竹<em>20 處</em></h4><div class="foot-tags"><span>香山衛生所</span><span>水源里</span><span>興南里</span><span>科學園區</span><span>腎友協會</span><span>建華里</span><span>頂埔里</span><span>金豐禾</span><span>關西里</span><span>八德里</span><span>客雅里</span><span>綠水里</span><span>竹北捐血中心</span><span>新民里</span><span>竹北農會</span><span>新埔園遊會</span><span>前溪里</span><span>海濱里</span><span>義成黃昏市場</span><span>仙水里槺榔宮</span></div></div>
+        <div class="foot-region"><h4>台中<em>3 處</em></h4><div class="foot-tags"><span>大庄社區</span><span>南簡朱南宮</span><span>民德里</span></div></div>
+        <div class="foot-region"><h4>南投<em>3 處</em></h4><div class="foot-tags"><span>新興里</span><span>勵昱居家長照中心</span><span>日寶長照・明正里</span></div></div>
+        <div class="foot-region"><h4>桃園<em>1 處</em></h4><div class="foot-tags"><span>臻好團購據點</span></div></div>
+        <div class="foot-region"><h4>台北・新北<em>5 處</em></h4><div class="foot-tags"><span>中和嘉穗里</span><span>民安乾麵</span><span>新店仁愛里</span><span>新店建國里</span><span>板橋港尾里</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block soft-band">
+    <div class="wrap center">
+      <h2 class="title" style="font-size:1.4rem">我也想體驗恢復力檢測</h2>
+      <div class="center mt24" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a><a class="btn btn-ghost" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">企業合作</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- 活動燈箱 -->
+<div class="evt-modal" id="evtModal" onclick="if(event.target===this)closeEvent()">
+  <div class="evt-box">
+    <button class="x" onclick="closeEvent()">×</button>
+    <div class="date" id="evtDate"></div>
+    <h3 id="evtTitle"></h3>
+    <p class="intro" id="evtIntro"></p>
+    <div class="evt-grid" id="evtGrid"></div>
+  </div>
+</div>
+
+<!-- 影音燈箱 -->
+<div class="vid-modal" id="vidModal" onclick="if(event.target===this)closeVid()">
+  <div class="vid-box">
+    <button class="x" onclick="closeVid()">×</button>
+    <div class="vid-player" id="vidPlayer"></div>
+    <div class="vid-info">
+      <div class="cat" id="vidCat"></div>
+      <h3 id="vidTitle"></h3>
+      <small class="by" id="vidBy"></small>
+      <p id="vidDesc"></p>
+      <a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入官方 LINE →</a>
+    </div>
+  </div>
+</div>
+
+<!-- 顧問老師燈箱 -->
+<div class="mem-modal" id="memModal" onclick="if(event.target===this)closeMember()">
+  <div class="mem-box">
+    <button class="x" onclick="closeMember()">×</button>
+    <div class="mem-head">
+      <div class="mem-photo" id="memPhoto"></div>
+      <div><div class="cat" id="memRole"></div><h3 id="memName"></h3></div>
+    </div>
+    <div class="mem-body" id="memBody"></div>
+    <a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener" style="margin-top:22px">預約・諮詢 →</a>
+  </div>
+</div>
+
+<!-- ==================================================== 10 START -->
+<div class="page" id="page-start" data-page="start">
+  <section class="start-stage">
+    <div class="ph start-bg" data-ph="開始健康旅程 主視覺" data-img="start-hero.jpg"></div>
+    <div class="start-stage-inner"><div class="wrap">
+      <div class="page-head" style="padding:0 0 34px">
+        <div class="crumb">09 ｜ START YOUR JOURNEY</div>
+        <h1>開始健康旅程</h1>
+        <p class="lead">不論你是想改善健康的人、想合作的專家，或想照顧團隊的企業——這裡都有一條為你而開的路徑。</p>
+      </div>
+      <div class="cta-cards">
+        <div class="cta-card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/value-shield.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>我有健康需求</h3><p>一般民眾的起點。加入官方 LINE，從看見恢復力開始，後續流程都從這裡展開。</p><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入抗老研究室官方 LINE →</a></div>
+        <div class="cta-card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-enterprise.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>我代表企業</h3><p>把恢復力帶進團隊與職場，提供到府團測預約與企業健康合作方案。</p><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">企業合作・到府團測預約</a></div>
+        <div class="cta-card"><div class="ic" style="background:none;width:64px;height:64px"><img src="images/comm-charity.png" alt="" style="width:64px;height:64px;object-fit:contain"></div><h3>我想加入團隊</h3><p>不論你是營養、運動、睡眠、芳療等跨域專家，或是想投入健康產業、從零開始的夥伴——都歡迎一起成為恢復力顧問。</p><a class="btn btn-primary" href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">成為恢復力顧問</a></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="block" style="padding:52px 0">
+    <div class="wrap center">
+      <p class="lead center" style="font-size:.96rem">想先了解整個流程？先看看 <a onclick="go('platform')" style="color:var(--clay);font-weight:500;cursor:pointer;text-decoration:underline">AI 健康解碼</a> 如何運作。</p>
+    </div>
+  </section>
+
+</div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="tag">探索健康恢復力
+          <small>讓生命不只是變老，而是持續綻放。</small>
+        </div>
+        <div class="social">
+          <span>LINE</span><span>Facebook</span><span>Instagram</span><span>Threads</span><span>YouTube</span>
+        </div>
+      </div>
+      <div>
+        <h5>快速連結</h5>
+        <a onclick="go('about')">品牌理念</a><br>
+        <a onclick="go('recovery')">恢復力</a><br>
+        <a onclick="go('platform')">AI 健康解碼</a><br>
+        <a onclick="go('ecosystem')">恢復力生態系</a>
+      </div>
+      <div>
+        <h5>　</h5>
+        <a onclick="go('consultant')">恢復力管理顧問</a><br>
+        <a onclick="go('journal')">健康知識站</a><br>
+        <a onclick="go('stories')">恢復故事</a><br>
+        <a onclick="go('community')">Community</a><br>
+        <a onclick="go('start')">開始健康旅程</a>
+      </div>
+      <div>
+        <h5>開始旅程</h5>
+        <a href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">加入 LINE</a><br>
+        <a onclick="go('platform')">AI 健康解碼</a><br>
+        <a href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">預約 PrysmiO</a><br>
+        <a href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">安排恢復力顧問</a><br>
+        <a href="https://lin.ee/v2qLfOC" target="_blank" rel="noopener">企業合作</a>
+      </div>
+    </div>
+
+    <div class="v2">
+      <div class="lab">未來 V2 ｜ COMING SOON</div>
+      <div class="items">
+        <span>會員中心</span><span>恢復力儀表板</span><span>PrysmiO 歷程</span><span>AI 健康紀錄</span>
+        <span>健康積分</span><span>穿戴裝置串接</span><span>企業健康平台</span><span>顧問後台</span>
+      </div>
+    </div>
+    <div class="copy">© 2026 抗老研究室 Anti-Aging Lab　·　探索健康恢復力　·　Design by 小鹿AI商業落地</div>
+  </div>
+</footer>
+
+<script>
+// ---- image slots: auto-load images/<file>, fallback to labelled placeholder ----
+const palettes=[['#DCE5D3','#C7D6B8'],['#EFD9CE','#E3C0AC'],['#E7DBC9','#D8C3A0'],['#DAE3DE','#BFD2C8'],['#F0E2D2','#E8CDB0']];
+document.querySelectorAll('[data-ph]').forEach((el,i)=>{
+  const p=palettes[i%palettes.length];
+  const label=el.getAttribute('data-ph');
+  const img=el.getAttribute('data-img');
+  el.classList.add('ph');
+  const deco=`<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p[0]}"/><stop offset="1" stop-color="${p[1]}"/></linearGradient></defs><rect width="400" height="300" fill="url(#g${i})"/><circle cx="${90+i%3*40}" cy="90" r="70" fill="#ffffff" opacity="0.18"/><circle cx="300" cy="${200-i%2*40}" r="95" fill="#ffffff" opacity="0.14"/><path d="M0 230 Q120 180 230 220 T400 210 V300 H0 Z" fill="#ffffff" opacity="0.16"/></svg>`;
+  function placeholder(){ el.innerHTML=deco+`<span>${label}${img?'　·　images/'+img:'　示意圖'}</span>`; }
+  if(img){
+    const im=new Image();
+    im.onload=function(){ el.innerHTML=`<img src="images/${img}" alt="${label}" style="width:100%;height:100%;object-fit:cover;display:block">`; };
+    im.onerror=placeholder;
+    im.src='images/'+img;
+  } else { placeholder(); }
+});
+
+// ---- featured video: click to play (set data-yt="YouTube影片ID") ----
+const fv=document.getElementById('featVideo');
+if(fv){fv.addEventListener('click',()=>{const id=fv.getAttribute('data-yt');if(!id)return;
+  fv.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1" title="精選影片" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;});}
+
+// ---- simple hash router ----
+const pages=['home','about','recovery','platform','ecosystem','consultant','journal','article','stories','community','start'];
+
+/* ---- 部落格文章 ---- */
+const articles={
+ oxy:{cat:'抗氧化',title:'青春抗氧化教室：從自由基到抗老防線',by:'抗老研究室團隊',read:'7 分鐘閱讀',cover:'art-oxy-cover.jpg',blocks:[
+   {t:'lead',x:'我們每天平均要承受 7 萬次以上的自由基攻擊，卻可能從來沒感覺到它的存在。這堂課從最基礎開始，帶你看懂自由基、氧化壓力，以及它如何一點一滴影響老化。'},
+   {t:'h',x:'第一課｜什麼是自由基？'},
+   {t:'img',f:'art-oxy-1.jpg'},
+   {t:'p',x:'自由基（Free Radicals）就像身體裡的「搶匪分子」——因為缺了電子，會不斷搶奪健康細胞的電子來穩定自己。'},
+   {t:'p',x:'它們產生的原因包括紫外線、空氣污染、抽菸、壓力、熬夜、加工食物等，甚至連正常的代謝與免疫反應，也會產生自由基。'},
+   {t:'p',x:'自由基是看不見、摸不著的「內在鏽蝕」，會逐漸影響皮膚、器官與免疫系統。等到出現斑點、皺紋或慢性病徵兆時，往往已經累積多年。'},
+   {t:'h',x:'第二課｜自由基的危害有多大？'},
+   {t:'img',f:'art-oxy-2.jpg'},
+   {t:'p',x:'想像你的細胞是一座城市，自由基就像到處放火的小偷——不只破壞建築（細胞膜），還會焚燒重要檔案（DNA）。'},
+   {t:'p',x:'自由基過量會造成氧化壓力（Oxidative Stress），長期下來可能造成：'},
+   {t:'ul',x:['肌膚老化：斑點、細紋、鬆弛','免疫力下降：容易生病','器官退化：心血管、腦部、肝腎功能受損','慢性疾病風險提升，如癌症、糖尿病']},
+   {t:'p',x:'雖然人體自帶抗氧化系統，但面對環境污染與高壓生活，常常「超出負荷」。定期檢測能幫你提早發現失衡，在老化加速前先行預防。'},
+   {t:'h',x:'第三課｜自由基與老化、健康的關係'},
+   {t:'img',f:'art-oxy-3.jpg'},
+   {t:'p',x:'為什麼有些人 40 歲看起來像 30 歲，而有些人 30 歲卻像 40 歲？差別就在於自由基對身體的長期影響。'},
+   {t:'p',x:'自由基長期攻擊細胞，引發慢性發炎、細胞功能下降，加速老化與疾病形成——包括皮膚鬆弛、內臟功能下降、代謝變慢、記憶力與專注力減弱。'},
+   {t:'h3',x:'可以怎麼做？'},
+   {t:'ul',x:['補充抗氧化營養素（維生素 C／E、蝦紅素、葡萄籽、花青素）','改善生活習慣（早睡、減壓、少加工食物）','定期檢測抗氧化指數，確認防禦力是否隨年齡下降']},
+   {t:'h',x:'第四課｜為什麼要用檢測看見抗氧化力？'},
+   {t:'img',f:'art-oxy-4.jpg'},
+   {t:'p',x:'「每天吃健康食品、做保養，結果還是老得快？」很多人等到出現斑點、皺紋、體力下降時，才發現自由基早已默默損傷健康多年。'},
+   {t:'p',x:'事實上，抗氧化力是可以逆轉與提升的，但前提是你必須先知道自己現在的狀況，並且追蹤調整的成果。'},
+   {t:'note',x:'一次檢測只是起點。抗氧化力會受壓力、飲食、環境影響，定期回測，才看得見營養補充與生活改善真正的成效。'}
+ ]},
+ health:{cat:'營養',title:'9 個抗老保健重點：從飲食到睡眠的日常防老',by:'抗老研究室團隊',read:'8 分鐘閱讀',cover:'art-health-cover.jpg',blocks:[
+   {t:'lead',x:'抗老不是單一招數，而是日常的累積。這 9 個保健重點，從飲食、代謝到睡眠與肌力，幫你把抗老落實在每一天。'},
+   {t:'h3',x:'1. 均衡飲食是根本'},{t:'p',c:'hook',x:'為什麼你天天吃飯，卻還缺營養？'},
+   {t:'p',x:'現代飲食常高油、高糖、重加工，導致營養不均衡；缺乏天然植化素與膳食纖維，會讓免疫力下降、老化加快。多彩蔬果提供不同抗氧化物，是健康的底盤。'},
+   {t:'ul',x:['每餐至少 1／2 來自蔬果，顏色越豐富越好（紅、橙、黃、綠、紫）','增加全穀雜糧，減少精緻澱粉','每日攝取 25g 以上膳食纖維']},{t:'img',f:'art-health-1.jpg'},
+   {t:'h3',x:'2. 控糖抗醣化'},{t:'p',c:'hook',x:'你以為甜只是變胖？其實它在偷走你的膠原蛋白。'},
+   {t:'p',x:'高糖飲食會在體內產生「醣化終產物」（AGEs），讓肌膚失去彈性、變黃變暗，還會促進發炎反應。'},
+   {t:'ul',x:['減少含糖飲料、甜點、精緻澱粉','搭配高纖蔬菜與優質蛋白，減緩血糖波動','補充維生素 B 群、α-硫辛酸等抗醣化營養素']},{t:'img',f:'art-health-2.jpg'},
+   {t:'h3',x:'3. 補水充足代謝好'},{t:'p',c:'hook',x:'你以為口渴才喝水？那時細胞已經在乾枯。'},
+   {t:'p',x:'水分不足會影響血液循環與代謝廢物的能力，讓皮膚黯淡、疲勞加重。充足水分能讓細胞保持彈性與代謝效率。'},
+   {t:'ul',x:['每日飲水量＝體重(kg)×30ml','早晨起床先補 300ml 溫水','適度補充含電解質的飲品維持水分平衡']},{t:'img',f:'art-health-3.jpg'},
+   {t:'h3',x:'4. 優質蛋白不可少'},{t:'p',c:'hook',x:'不是只有健身才要吃蛋白質。'},
+   {t:'p',x:'蛋白質是肌肉、免疫系統、膠原蛋白的重要原料，缺乏會導致肌肉流失、免疫下降、肌膚鬆弛。'},
+   {t:'ul',x:['每日攝取 1–1.2g 蛋白質／體重公斤','選擇豆、魚、蛋、瘦肉、乳製品等低脂高質來源','搭配運動促進蛋白質利用率']},{t:'img',f:'art-health-4.jpg'},
+   {t:'h3',x:'5. 補充抗氧化營養素'},{t:'p',c:'hook',x:'皺紋不只是年齡造成，更是自由基在搗蛋。'},
+   {t:'p',x:'自由基會破壞細胞結構，讓肌膚與器官加速老化；抗氧化營養素能清除自由基，保護膠原與細胞活性。'},
+   {t:'ul',x:['維他命 C、E：中和自由基','白藜蘆醇、綠茶多酚：抑制氧化反應','蝦紅素、葡萄籽萃取物：高效抗氧化']},{t:'img',f:'art-health-5.jpg'},
+   {t:'h3',x:'6. 穩定體重、減少內臟脂肪'},{t:'p',c:'hook',x:'腰圍多一吋，老化快不只一點。'},
+   {t:'p',x:'腹部肥胖與慢性發炎、代謝疾病高度相關，也會加速細胞老化。減少內臟脂肪是健康抗老的關鍵。'},
+   {t:'ul',x:['控制熱量攝取，減少油炸與甜食','每週至少 150 分鐘中等強度運動','增加高纖飲食與 Omega-3 脂肪酸攝取']},{t:'img',f:'art-health-6.jpg'},
+   {t:'h3',x:'7. 補腦營養護思緒'},{t:'p',c:'hook',x:'記性差、腦霧，可能是營養不夠。'},
+   {t:'p',x:'DHA、EPA、B 群、卵磷脂等營養素能維護神經系統健康，減少腦部退化與情緒波動。'},
+   {t:'ul',x:['深海魚油（DHA／EPA）','維生素 B 群、卵磷脂','銀杏葉萃取，促進循環']},{t:'img',f:'art-health-7.jpg'},
+   {t:'h3',x:'8. 睡眠與壓力管理'},{t:'p',c:'hook',x:'睡得少，不只是累，是細胞真的老。'},
+   {t:'p',x:'睡眠不足與長期壓力會提升氧化壓力與皮質醇分泌，破壞膠原蛋白與免疫力。'},
+   {t:'ul',x:['固定睡眠時間，每晚 7–8 小時','睡前減少藍光暴露','運用深呼吸、冥想等方式放鬆']},{t:'img',f:'art-health-8.jpg'},
+   {t:'h3',x:'9. 骨本肌力要守住'},{t:'p',c:'hook',x:'不是老了才補鈣，年輕就要存骨本。'},
+   {t:'p',x:'骨質與肌肉量會隨年齡下降，缺乏會增加跌倒與骨折風險，影響行動力與生活品質。'},
+   {t:'ul',x:['補充鈣質、維生素 D、鎂','重量訓練與阻力運動','適度曬太陽促進維生素 D 生成']},{t:'img',f:'art-health-9.jpg'}
+ ]},
+ skin:{cat:'肌膚',title:'抗老養膚指南：把保養變簡單的 6 個主題',by:'抗老研究室團隊',read:'4 分鐘閱讀',cover:'art-skin-cover.jpg',blocks:[
+   {t:'lead',x:'保養品越買越多，卻不一定養對肌膚。這份指南幫你釐清順序、挑對產品，先從六個主題建立正確觀念。'},
+   {t:'h3',x:'熱門保養話題'},{t:'p',x:'抗老怎麼做才有效？九大熱門保養重點，一次破解保養迷思。'},{t:'img',f:'art-skin-1.jpg'},
+   {t:'h3',x:'保養步驟'},{t:'p',x:'擦再多保養品，順序錯就白搭；掌握正確步驟，養出發光肌。'},{t:'img',f:'art-skin-2.jpg'},
+   {t:'h3',x:'膚質分類'},{t:'p',x:'油肌？乾肌？敏感肌？先找到你的膚質類型，才能精準保養不出錯。'},{t:'img',f:'art-skin-3.jpg'},
+   {t:'h3',x:'精選產品推薦'},{t:'p',x:'抗老保養品太多選不出？精選人氣實測推薦，安心挑。'},{t:'img',f:'art-skin-4.jpg'},
+   {t:'h3',x:'Q&A 保養迷思破解'},{t:'p',x:'擦乳液前要噴保濕水？防曬會堵塞毛孔？一次解答你的常見疑問。'},{t:'img',f:'art-skin-5.jpg'},
+   {t:'h3',x:'常見保養迷思'},{t:'p',x:'聽過的保養觀念，其實可能是迷思；用專業拆解你的肌膚誤解。'},{t:'img',f:'art-skin-6.jpg'},
+   {t:'note',x:'這是養膚指南的主題總覽。每個主題的完整內容（保養步驟、膚質對照、產品清單、迷思破解）可以再逐篇展開——需要時再告訴我。'}
+ ]}
+};
+function renderBlocks(bs){return bs.map(function(b){
+  if(b.t==='lead')return '<p class="art-lead">'+b.x+'</p>';
+  if(b.t==='h')return '<h2>'+b.x+'</h2>';
+  if(b.t==='h3')return '<h3>'+b.x+'</h3>';
+  if(b.t==='p')return '<p'+(b.c?' class="'+b.c+'"':'')+'>'+b.x+'</p>';
+  if(b.t==='ul')return '<ul>'+b.x.map(function(li){return '<li>'+li+'</li>';}).join('')+'</ul>';
+  if(b.t==='note')return '<div class="art-note">'+b.x+'</div>';
+  if(b.t==='img')return '<div class="art-img"><img src="images/'+b.f+'" alt="" onerror="this.parentNode.style.display=\'none\'"></div>';
+  return '';
+}).join('');}
+function filterPosts(el,cat){
+  document.querySelectorAll('#journalChips span').forEach(s=>s.classList.remove('on'));
+  el.classList.add('on');
+  let shown=0;
+  document.querySelectorAll('#journalGrid .post').forEach(p=>{
+    const m=(cat==='全部'||p.dataset.cat===cat);
+    p.style.display=m?'':'none'; if(m)shown++;
+  });
+  const e=document.getElementById('journalEmpty'); if(e)e.style.display=shown?'none':'';
+}
+function openArticle(slug){
+  const a=articles[slug]; if(!a)return;
+  document.getElementById('artCat').textContent=a.cat;
+  document.getElementById('artTitle').textContent=a.title;
+  document.getElementById('artMeta').textContent=a.by+'　·　'+a.read;
+  const cov=document.getElementById('artCover');
+  cov.innerHTML='<img src="images/'+a.cover+'" alt="" onerror="this.style.display=\'none\'">';
+  document.getElementById('artBody').innerHTML=renderBlocks(a.blocks);
+  go('article');
+}
+function go(id){
+  if(!pages.includes(id)) id='home';
+  if(id==='article' && !document.getElementById('artBody').innerHTML.trim()) id='journal';
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('active',a.getAttribute('data-p')===id));
+  history.replaceState(null,'','#'+id);
+  document.getElementById('menu').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
+}
+function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
+function mrailScroll(d){var r=document.getElementById('mediaRail');if(r)r.scrollBy({left:d*320,behavior:'smooth'});}
+
+/* ---- 影音燈箱 ---- */
+const vidData=[
+  {id:'jlZKdN2SGLI', cat:'經絡推拿', title:'筋柔了，身體才更有恢復力',
+   by:'陳進發老師｜經絡推拿健康養身館',
+   desc:'從筋膜與經絡循環的角度，帶你了解身體如何維持恢復力，以及日常怎麼放鬆緊繃、幫助循環。'},
+  {id:'dwMBSSfOGJA', cat:'營養補充', title:'為什麼以前的人比較少補保健品？',
+   by:'陳進發老師｜經絡推拿健康養身館',
+   desc:'從自然飲食到現代生活，為什麼現代人更需要補充營養？這支影片帶你了解自然飲食的重要，以及日常怎麼補得對、補得夠。'},
+  {id:'--WTfANNjV4', cat:'健康管理', title:'做了這麼多，真的有效嗎？',
+   by:'陳進發老師｜經絡推拿健康養身館',
+   desc:'做了這麼多保養與補充，到底有沒有效？這支影片談如何讓身體用數據告訴你答案，把健康從「憑感覺」變成「看得見」。'},
+];
+function filterVid(btn,cat){
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#vrail .vcard').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
+  const r=document.getElementById('vrail'); if(r) r.scrollLeft=0;
+}
+function vrailScroll(dir){
+  const r=document.getElementById('vrail'); if(r) r.scrollBy({left:dir*260,behavior:'smooth'});
+}
+function openVid(i){
+  const v=vidData[i]; if(!v) return;
+  document.getElementById('vidCat').textContent=v.cat;
+  document.getElementById('vidTitle').textContent=v.title;
+  document.getElementById('vidBy').textContent=v.by;
+  document.getElementById('vidDesc').textContent=v.desc;
+  document.getElementById('vidPlayer').innerHTML=`<iframe src="https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&playsinline=1" title="${v.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  document.getElementById('vidModal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeVid(){document.getElementById('vidModal').classList.remove('on');document.getElementById('vidPlayer').innerHTML='';document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVid()});
+
+/* ---- 社區推廣紀錄 燈箱 ---- */
+const evtData=[
+  {date:'2026 · Q1', title:'里民中心・健康量測日',
+   intro:'我們走進社區里民中心，為居民進行 PrysmiO 恢復力檢測與一對一解讀，並分享日常可落實的恢復力建議。',
+   photos:['event1-1.jpg','event1-2.jpg','event1-3.jpg','event1-4.jpg','event1-5.jpg','event1-6.jpg','event1-7.jpg','event1-8.jpg','event1-9.jpg','event1-10.jpg','event1-11.jpg','event1-12.jpg','event1-13.jpg','event1-14.jpg','event1-15.jpg','event1-16.jpg','event1-17.jpg']},
+  {date:'2026 · Q1', title:'企業職場・恢復力檢測',
+   intro:'與企業合作，把健康導航帶進職場，協助同仁在忙碌工作中看見自己的恢復力狀態，並提供團隊健康方案建議。',
+   photos:['event2-1.jpg','event2-2.jpg','event2-3.jpg','event2-4.jpg','event2-5.jpg','event2-6.jpg']},
+  {date:'2025 · Q4', title:'社區健康講座',
+   intro:'以科學與陪伴的角度，和居民一起破除常見的保健迷思，從睡眠、營養到情緒，重新認識身體的恢復力。',
+   photos:['event3-1.jpg','event3-2.jpg','event3-3.jpg','event3-4.jpg','event3-5.jpg']},
+];
+function openEvent(i){
+  const e=evtData[i]; if(!e) return;
+  document.getElementById('evtDate').textContent=e.date;
+  document.getElementById('evtTitle').textContent=e.title;
+  document.getElementById('evtIntro').textContent=e.intro;
+  document.getElementById('evtGrid').innerHTML=e.photos.map(p=>
+    `<div class="evt-photo"><img src="images/${p}" alt="" onerror="this.parentNode.innerHTML='<span>'+'${p}'+'</span>'"></div>`).join('');
+  document.getElementById('evtModal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeEvent(){document.getElementById('evtModal').classList.remove('on');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEvent()});
+
+/* ---- 顧問老師簡歷 ---- */
+const memberData={
+ chen:{name:'陳進發 老師',role:'經絡推拿',photo:'member-chen.jpg',sections:[
+   {h:'現任',items:['苗栗縣拔荷沌經絡推拿教育學會 理事長','吉佑經絡推拿健康養生館 負責人','東振國際實業有限公司 負責人']},
+   {h:'學歷・資格',items:['中國文化大學 體育學系（輔系：國際貿易學系）','國立臺灣體育運動大學 體育研究所（休閒運動組）碩士','中華民國教育部 講師證']},
+   {h:'專長',items:['運動推拿學','保健推拿學','中醫經絡推拿學']},
+   {h:'榮譽',items:['苗栗縣 104 年度模範勞工「勞工楷模・勞工之光獎」','2021 國際輔助醫學論壇「學術貢獻金獎」「十大傑出技師金獎」','台灣整復師聯盟「卓越整復師楷模獎」']},
+   {h:'教學・經歷',items:['民國 86 年起講授「運動推拿」課程迄今','國立臺灣體育運動大學、國立臺灣師範大學、亞洲大學、中國科技大學 等兼任教師','中華民國體育運動舞蹈協會 國家 A 級教練講習會「運動推拿」講師','苗栗縣政府 原民地區經絡推拿職業培訓計畫 主持人・主講老師','著有《運動推拿》（高立圖書），並發表多篇運動推拿相關研究']},
+   {h:'運動・裁判資格',items:['運動舞蹈 國家級甲級裁判證、甲級教練證','中華民國武術損傷整復發展協會 研究員']}
+ ]},
+ chien:{name:'簡伯容 老師',role:'瑜伽・頌缽',photo:'member-chien.jpg',sections:[
+   {h:'專長',items:['瑜伽串聯、頌缽','壺鈴、現代舞']},
+   {h:'國際認證',items:['美國瑜伽聯盟 E-RYT200 / YACEP','美國運動體適能協會 AFAA 個人健身指導國際認證教練','ITI CKC L1＋L2 壺鈴認證教練','CrossCore 認證教練、RYT200 認證']},
+   {h:'學歷',items:['國立臺北藝術大學 舞蹈系（主修現代舞）・舞齡超過 30 年']},
+   {h:'經歷',items:['雲門舞集 任職超過 7 年・全國公演','iYOMA 師資培訓課程 講師','iPARTY 體適能培訓學院 推廣大使','北一女中 瑜伽課團 老師']}
+ ]}
+};
+function openMember(k){
+  const m=memberData[k]; if(!m)return;
+  document.getElementById('memRole').textContent=m.role;
+  document.getElementById('memName').textContent=m.name;
+  document.getElementById('memPhoto').innerHTML='<img src="images/'+m.photo+'" alt="" onerror="this.style.display=\'none\'">';
+  document.getElementById('memBody').innerHTML=m.sections.map(s=>'<h4>'+s.h+'</h4><ul>'+s.items.map(i=>'<li>'+i+'</li>').join('')+'</ul>').join('');
+  document.getElementById('memModal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeMember(){document.getElementById('memModal').classList.remove('on');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMember()});
+
+window.addEventListener('DOMContentLoaded',()=>{go((location.hash||'#home').slice(1))});
+</script>
+</body>
+</html>
